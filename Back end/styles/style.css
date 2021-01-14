@@ -1,5 +1,7 @@
 .section1{
   background-color: gray;
+  align-content: center;
+  opacity: 0.5;
 }
 .section2{
   position: relative;
@@ -14,6 +16,12 @@
     padding: 25% 10% 5% 5%;
 
 }
+.signupform {
+  align-content: center;
+  padding-right: 40%;
+  opacity: 0.0;
+}
+
 .AboutUs{
   background-color: #D3D3D3;
 }
@@ -257,3 +265,4 @@ table tr th {
 .panel-shadow {
     box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
 }
+

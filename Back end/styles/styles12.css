@@ -1,0 +1,79 @@
+.Question{
+  text-align:center;
+  background-color:#00bfff;
+
+  padding:20px 20px;
+}
+.Ask{
+  font-size:40px;
+  color:white;
+  font-weight: bold;
+
+}
+.Ask2{
+  font-size:18px;
+  color:#f1f1f1;
+  padding-bottom:10px;
+}
+.AskButton{
+
+  width: 10%;
+  height: 7%;
+  padding:10px 10px;
+  background-color:#D3D3D3;
+  border-radius:30%;
+  color:#5F9EA0;
+  font-weight: bold;
+
+}
+
+.Answer{
+  text-align:center;
+  background-color:#FF7F50;
+
+  padding:20px 20px;
+}
+.Ans{
+  font-size:40px;
+  color:white;
+  font-weight: bold;
+
+}
+.Ans2{
+  font-size:18px;
+  color:black;
+  padding-bottom:10px;
+}
+.ANSButton{
+  width: 10%;
+  height: 7%;
+  background-color:#D3D3D3;
+  padding:10px 10px;
+  border-radius:30%;
+  color:#FF7F50;
+  font-weight: bold;
+
+}
+.anspar{
+    color: white;
+}
+.askques{
+  font-weight: bold;
+}
+.Temp{
+  background-color:green;
+  padding:7% 7%;
+}
+
+.Question-area{
+    padding: 10%;
+}
+.browse{
+  margin-left: 45%;
+}
+.Signup-portal{
+   padding-right: 15%;
+}
+#institute{
+  display: none;
+}
