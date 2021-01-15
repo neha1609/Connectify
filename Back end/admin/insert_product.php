@@ -24,7 +24,7 @@ else {
 </head>
 
 <body>
-
+<?php include("includes/header.php"); ?>
 <div class="row"><!-- row Starts -->
 
 <div class="col-lg-12"><!-- col-lg-12 Starts -->
@@ -289,4 +289,6 @@ echo "<script>window.open('index.php?view_products','_self')</script>";
 
 ?>
 
-<?php } ?>
+<?php 
+include("includes/footer.php");
+} ?>

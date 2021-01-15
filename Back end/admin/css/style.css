@@ -30,8 +30,7 @@ margin-top:50px;
 }
 
 #wrapper{
-
-padding-left:0;
+	padding-left:0px;
 
 }
 
@@ -46,11 +45,11 @@ background-color:#F9F9F9;
 @media (min-width: 768px) {
 
 #wrapper{
-padding-left:255px;
+padding-left:0px;
 }
 
 #page-wrapper{
-padding:10px;
+padding:0px;
 
 }
 
@@ -87,7 +86,7 @@ color:black;
 
 @media (min-width: 768px) {
 
-.side-nav{
+/*.side-nav{
 position:fixed;
 top:51px;
 width:255px;
@@ -128,7 +127,7 @@ color:#999;
 
 .side-nav>li>ul>li>a:hover{
 color:#fff;
-}
+}*/
 
 
 /* Custom Color Panels Styles */

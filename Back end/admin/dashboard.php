@@ -21,7 +21,7 @@ else {
 
 <div class="row"><!-- 1 row Starts -->
 
-<div class="col-lg-12"><!-- col-lg-12 Starts -->
+<div class="col-lg-11"><!-- col-lg-12 Starts -->
 
 <h1 class="page-header">Dashboard</h1>
 

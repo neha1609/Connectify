@@ -10,6 +10,7 @@ echo "<script>window.open('login.php','_self')</script>";
 
 else {
 
+include("includes/header.php");
 ?>
 
 
@@ -89,11 +90,11 @@ $pro_id = $row_pro['product_id'];
 
 $pro_title = $row_pro['product_title'];
 
-$pro_image = $row_pro['product_img1'];
+$pro_image = $row_pro['product_img'];
 
 $pro_price = $row_pro['product_price'];
 
-$pro_keywords = $row_pro['product_keywords'];
+$pro_keywords = $row_pro['product_keyword'];
 
 $pro_date = $row_pro['date'];
 
@@ -107,9 +108,9 @@ $i++;
 
 <td><?php echo $pro_title; ?></td>
 
-<td><img src="product_images/<?php echo $pro_image; ?>" width="60" height="60"></td>
+<td><img src="image/<?php echo $pro_image; ?>" width="60" height="60"></td>
 
-<td>$ <?php echo $pro_price; ?></td>
+<td>Rs. <?php echo $pro_price; ?></td>
 
 <td>
 <?php
@@ -168,4 +169,6 @@ echo $count;
 
 
 
-<?php } ?>
+<?php 
+include("includes/footer.php");
+} ?>

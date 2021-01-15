@@ -11,6 +11,7 @@ else {
 ?>
 
 <?php
+include("includes/header.php");
 
 if(isset($_GET['edit_product'])){
 
@@ -348,4 +349,6 @@ echo "<script>window.open('index.php?view_products','_self')</script>";
 
 ?>
 
-<?php } ?>
+<?php 
+include("includes/footer.php");
+} ?>

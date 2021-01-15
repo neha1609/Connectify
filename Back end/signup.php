@@ -32,7 +32,7 @@
   </style>
 
 
-  <title></title>
+  <title>Sign Up</title>
 </head>
 <!-- Bootstrao script -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -51,11 +51,11 @@
   <!-- Signup -->
   <section class="section1" class="Signup-portal">
     <div style="background-image: url('image/pic2.jpg');
-     background-size:width:100%; background-repeat: no-repeat; height:100vh; padding-top:80px; margin-left:0; margin-right:0; background-position:center; opacity: 0.5; align-content: center;" >
+     background-size:width:100%; background-repeat: no-repeat; height:100vh; padding-top:80px; margin-left:0; margin-right:0; background-position:center; /*opacity: 0.5; */align-content: center;" >
      
 
     <div class="signupform"> 
-      <form>
+      <form class="formSignup">
       <div class="lg:w-2/6 md:w-1/2 bg-gray-200 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
         <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2>
         <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Username" type="text">

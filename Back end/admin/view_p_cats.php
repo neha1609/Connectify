@@ -7,7 +7,7 @@ echo "<script>window.open('login.php','_self')</script>";
 }
 
 else {
-
+include("includes/header.php");
 ?>
 
 
@@ -138,4 +138,6 @@ $i++;
 
 
 
-<?php } ?>
+<?php 
+include("includes/footer.php");
+} ?>
