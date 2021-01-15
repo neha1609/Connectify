@@ -31,17 +31,17 @@ $p_cat = $row_edit['p_cat_id'];
 
 $cat = $row_edit['cat_id'];
 
-$p_image1 = $row_edit['product_img1'];
+$p_image1 = $row_edit['product_img'];
 
-$p_image2 = $row_edit['product_img2'];
+/*$p_image2 = $row_edit['product_img2'];
 
-$p_image3 = $row_edit['product_img3'];
+$p_image3 = $row_edit['product_img3'];*/
 
 $p_price = $row_edit['product_price'];
 
 $p_desc = $row_edit['product_desc'];
 
-$p_keywords = $row_edit['product_keywords'];
+$p_keywords = $row_edit['product_keyword'];
 
 }
 

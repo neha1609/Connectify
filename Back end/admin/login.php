@@ -15,12 +15,21 @@ include("includes/dbcon.php");
 <link rel="stylesheet" href="css/bootstrap.min.css" >
 
 <link rel="stylesheet" href="css/login.css" >
+<link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Overpass:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;800&family=Ubuntu&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-
+<?php
+include("includes/header.php");
+?>
 <div class="container" ><!-- container Starts -->
+	<div style="background-image: url('image/pic2.jpg');
+     background-size:width:100%; background-repeat: no-repeat; height:100vh; padding-top:80px; margin-left:0; margin-right:0; background-position:center ">
 
 <form class="form-login" action="" method="post" ><!-- form-login Starts -->
 
@@ -38,12 +47,14 @@ Log in
 
 
 </form><!-- form-login Ends -->
-
+</div>
 </div><!-- container Ends -->
 
-
+<?php include("includes/footer.php");
+?>
 
 </body>
+
 
 </html>
 
