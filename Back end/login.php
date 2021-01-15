@@ -1,6 +1,31 @@
 <?php
   include("includes/dbcon.php");
 ?>
+
+<?php
+  session_start();
+    if(isset($_POST) && !empty($_POST))
+    {
+     //echo "<pre>";print_r($_POST);echo "</pre>";
+      $email=$_POST['email'];
+      $password=md5($_POST['password']);
+      $sql="SELECT * FROM user WHERE email='$email'AND password='$password'";
+      if($result=$con->query($sql))
+      {
+        $row=$result->fetch_assoc();
+        if(!empty($row))
+        {
+          //echo "Welcome ".$row['name'];exit;
+          $_SESSION['user']=$row;
+          header("Location:index.php");
+        }
+        else
+        {
+          echo "<script>alert('Either email or password is incorrect.');</script>";
+        }
+    }
+  }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -32,7 +57,7 @@
   </style>
 
 
-  <title>Sign Up</title>
+  <title>Login</title>
 </head>
 <!-- Bootstrao script -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -51,30 +76,22 @@
   <!-- Signup -->
   <section class="section1">
     <div style="background-image: url('image/pic2.jpg');
-     width:100%; background-repeat: no-repeat; height:100vh; padding-bottom: 80px; margin-left:0; margin-right:0; background-position:center; /*opacity: 0.5; */align-content: center;" >
+     background-size:width:100%; background-repeat: no-repeat; height:100vh; padding-top:80px; margin-left:0; margin-right:0; background-position:center; /*opacity: 0.5; */align-content: center;" >
      
 
     <div class="signupform"> 
-      <form class="formSignup" action="register.php" method="post">
+      <form class="formSignup" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
       <div class="lg:w-2/6 md:w-1/2 bg-gray-200 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0" style="background-color: rgba(237,242,247,0.5);">
-        <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2>
-        <label class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" for="upload">Upload your pic
-        <input  type="file" name="pic" id="upload"></label>
-        <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Name" type="text" name="name" required>
-        <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Username" type="text" name="username" >
-        <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Email" type="email" name="email" required>
+        <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Login</h2>
+        
+        <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Email" type="email" name="email">
 
-        <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Password" type="password" name="password" required>
-        <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Country" type="text" name="country" required>
-        <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Contact" type="text" name="contact" required>
+        <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Password" type="password" name="password">
 
         
         <br>
-        <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="submit" name="submit">Create New Account
+        <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="submit" name="submit">Login
         </button>
-        <p>Already have an account?
-          <a href="login.php">Login</a>
-        </p>
         </div>
       </form>
     </div>
