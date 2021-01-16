@@ -31,7 +31,7 @@ $p_cat = $row_edit['p_cat_id'];
 
 $cat = $row_edit['cat_id'];
 
-$p_image1 = $row_edit['product_img'];
+$p_image = $row_edit['product_img'];
 
 /*$p_image2 = $row_edit['product_img2'];
 
@@ -41,7 +41,7 @@ $p_price = $row_edit['product_price'];
 
 $p_desc = $row_edit['product_desc'];
 
-$p_keywords = $row_edit['product_keyword'];
+$p_keyword = $row_edit['product_keyword'];
 
 }
 
@@ -206,42 +206,18 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Image 1 </label>
+<label class="col-md-3 control-label" > Product Image </label>
 
 <div class="col-md-6" >
 
-<input type="file" name="product_img1" class="form-control" required >
-<br><img src="product_images/<?php echo $p_image1; ?>" width="70" height="70" >
+<input type="file" name="product_img" class="form-control" required >
+<br><img src="image/<?php echo $p_image; ?>" width="70" height="70" >
 
 </div>
 
 </div><!-- form-group Ends -->
 
-<div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Image 2 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img2" class="form-control" required >
-<br><img src="product_images/<?php echo $p_image2; ?>" width="70" height="70" >
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Image 3 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img3" class="form-control" required >
-<br><img src="product_images/<?php echo $p_image3; ?>" width="70" height="70" >
-
-</div>
-
-</div><!-- form-group Ends -->
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -261,7 +237,7 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="col-md-6" >
 
-<input type="text" name="product_keywords" class="form-control" required value="<?php echo $p_keywords; ?>" >
+<input type="text" name="product_keyword" class="form-control" required value="<?php echo $p_keyword; ?>" >
 
 </div>
 
@@ -319,21 +295,21 @@ $product_cat = $_POST['product_cat'];
 $cat = $_POST['cat'];
 $product_price = $_POST['product_price'];
 $product_desc = $_POST['product_desc'];
-$product_keywords = $_POST['product_keywords'];
+$product_keyword = $_POST['product_keyword'];
 
-$product_img1 = $_FILES['product_img1']['name'];
-$product_img2 = $_FILES['product_img2']['name'];
-$product_img3 = $_FILES['product_img3']['name'];
+$product_img1 = $_FILES['product_img']['name'];
+//$product_img2 = $_FILES['product_img2']['name'];
+//$product_img3 = $_FILES['product_img3']['name'];
 
-$temp_name1 = $_FILES['product_img1']['tmp_name'];
-$temp_name2 = $_FILES['product_img2']['tmp_name'];
-$temp_name3 = $_FILES['product_img3']['tmp_name'];
+$temp_name1 = $_FILES['product_img']['tmp_name'];
+//$temp_name2 = $_FILES['product_img2']['tmp_name'];
+//$temp_name3 = $_FILES['product_img3']['tmp_name'];
 
-move_uploaded_file($temp_name1,"product_images/$product_img1");
-move_uploaded_file($temp_name2,"product_images/$product_img2");
-move_uploaded_file($temp_name3,"product_images/$product_img3");
+move_uploaded_file($temp_name1,"image/$product_img1");
+//move_uploaded_file($temp_name2,"product_images/$product_img2");
+//move_uploaded_file($temp_name3,"product_images/$product_img3");
 
-$update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',date=NOW(),product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_price='$product_price',product_desc='$product_desc',product_keywords='$product_keywords' where product_id='$p_id'";
+$update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',date=NOW(),product_title='$product_title',product_img='$product_img1',product_price='$product_price',product_desc='$product_desc',product_keyword='$product_keyword' where product_id='$p_id'";
 
 $run_product = mysqli_query($con,$update_product);
 

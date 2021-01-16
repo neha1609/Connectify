@@ -85,17 +85,17 @@ while($row_c=mysqli_fetch_array($run_c)){
 
 $c_id = $row_c['customer_id'];
 
-$c_name = $row_c['customer_name'];
+$c_name = $row_c['name'];
 
-$c_email = $row_c['customer_email'];
+$c_email = $row_c['email'];
 
-$c_image = $row_c['customer_image'];
+$c_image = $row_c['image'];
 
-$c_country = $row_c['customer_country'];
+$c_country = $row_c['country'];
 
-$c_city = $row_c['customer_city'];
+$c_city = $row_c['city'];
 
-$c_contact = $row_c['customer_contact'];
+$c_contact = $row_c['contact'];
 
 $i++;
 

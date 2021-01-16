@@ -364,7 +364,7 @@ View All Orders <i class="fa fa-arrow-circle-right" ></i>
 
 <div class="thumb-info mb-md"><!-- thumb-info mb-md Starts -->
 
-<img src="admin_images/<?php echo $admin_image; ?>" class="rounded img-responsive">
+<img src="image/<?php echo $admin_image; ?>" class="rounded img-responsive">
 
 <div class="thumb-info-title"><!-- thumb-info-title Starts -->
 

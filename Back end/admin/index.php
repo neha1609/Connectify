@@ -1,11 +1,9 @@
-<?php
-		include("includes/dbcon.php");
-?>
+
 <?php
 
 session_start();
 
-include("includes/dbcon.php");
+//include("includes/dbcon.php");
 
 if(!isset($_SESSION['admin_email'])){
 
@@ -15,7 +13,7 @@ echo "<script>window.open('login.php','_self')</script>";
 
 else {
 
-
+include("includes/dbcon.php");
 
 
 ?>
@@ -93,13 +91,13 @@ $count_pending_orders = mysqli_num_rows($run_pending_orders);
 
 <body>
 
-<div id="wrapper"><!-- wrapper Starts -->
+<div>
 
 <?php /*include("includes/sidebar.php"); */ ?>
 
-<div id="page-wrapper"><!-- page-wrapper Starts -->
+<div id="page-wrapper">
 
-<div class="container-fluid"><!-- container-fluid Starts -->
+<div class="container-fluid">
 
 <?php
 
