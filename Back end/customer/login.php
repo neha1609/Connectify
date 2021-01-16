@@ -17,7 +17,7 @@
         {
           //echo "Welcome ".$row['name'];exit;
           $_SESSION['customers']=$row;
-          header("Location:index.php");
+          header("Location:../index.php");
         }
         else
         {
@@ -33,7 +33,7 @@
   <meta charset="utf-8">
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <!--link rel="stylesheet" href="styles/styles12.css"-->
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <!-- Bootstrap script -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
@@ -92,6 +92,7 @@
         <br>
         <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="submit" name="submit">Login
         </button>
+        <a href="change_pass.php">Forgotten Password</a>
         </div>
       </form>
     </div>
