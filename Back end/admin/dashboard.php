@@ -67,6 +67,19 @@ else {
 </div><!-- panel-heading row Ends -->
 
 </div><!-- panel-heading Ends -->
+<a href="index.php?insert_product">
+
+<div class="panel-footer"><!-- panel-footer Starts -->
+
+<span class="pull-left"> Insert Products </span>
+
+<span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+
+<div class="clearfix"></div>
+
+</div><!-- panel-footer Ends -->
+
+</a>
 
 <a href="index.php?view_products">
 
@@ -112,8 +125,135 @@ else {
 </div><!-- panel-heading row Ends -->
 
 </div><!-- panel-heading Ends -->
+<a href="index.php?insert_customer">
+
+<div class="panel-footer"><!-- panel-footer Starts -->
+
+<span class="pull-left"> Insert Customer </span>
+
+<span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+
+<div class="clearfix"></div>
+
+</div><!-- panel-footer Ends -->
+
+</a>
 
 <a href="index.php?view_customers">
+
+<div class="panel-footer"><!-- panel-footer Starts -->
+
+<span class="pull-left"> View Details </span>
+
+<span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+
+<div class="clearfix"></div>
+
+</div><!-- panel-footer Ends -->
+
+</a>
+
+</div><!-- panel panel-green Ends -->
+
+</div><!-- col-lg-3 col-md-6 Ends -->
+
+<div class="col-lg-3 col-md-6"><!-- col-lg-3 col-md-6 Starts -->
+
+<div class="panel panel-red"><!-- panel panel-green Starts -->
+
+<div class="panel-heading"><!-- panel-heading Starts -->
+
+<div class="row"><!-- panel-heading row Starts -->
+
+<div class="col-xs-3"><!-- col-xs-3 Starts -->
+
+<i class="fa fa-comments fa-5x"> </i>
+
+</div><!-- col-xs-3 Ends -->
+
+<div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
+
+<div class="huge"> <?php echo $count_vendors; ?> </div>
+
+<div>Vendors</div>
+
+</div><!-- col-xs-9 text-right Ends -->
+
+</div><!-- panel-heading row Ends -->
+
+</div><!-- panel-heading Ends -->
+<a href="index.php?insert_vendor">
+
+<div class="panel-footer"><!-- panel-footer Starts -->
+
+<span class="pull-left"> Insert Vendors </span>
+
+<span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+
+<div class="clearfix"></div>
+
+</div><!-- panel-footer Ends -->
+
+</a>
+
+<a href="index.php?view_vendor">
+
+<div class="panel-footer"><!-- panel-footer Starts -->
+
+<span class="pull-left"> View Details </span>
+
+<span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+
+<div class="clearfix"></div>
+
+</div><!-- panel-footer Ends -->
+
+</a>
+
+</div><!-- panel panel-green Ends -->
+
+</div><!-- col-lg-3 col-md-6 Ends -->
+
+<div class="col-lg-3 col-md-6"><!-- col-lg-3 col-md-6 Starts -->
+
+<div class="panel panel-red"><!-- panel panel-green Starts -->
+
+<div class="panel-heading"><!-- panel-heading Starts -->
+
+<div class="row"><!-- panel-heading row Starts -->
+
+<div class="col-xs-3"><!-- col-xs-3 Starts -->
+
+<i class="fa fa-comments fa-5x"> </i>
+
+</div><!-- col-xs-3 Ends -->
+
+<div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
+
+<div class="huge"> <?php echo $count_d_agent; ?> </div>
+
+<div>Delivery agent</div>
+
+</div><!-- col-xs-9 text-right Ends -->
+
+</div><!-- panel-heading row Ends -->
+
+</div><!-- panel-heading Ends -->
+<a href="index.php?insert_d_agent">
+
+<div class="panel-footer"><!-- panel-footer Starts -->
+
+<span class="pull-left"> Insert Delivery Agent </span>
+
+<span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+
+<div class="clearfix"></div>
+
+</div><!-- panel-footer Ends -->
+
+</a>
+
+<a href="index.php?view_d_agent">
 
 <div class="panel-footer"><!-- panel-footer Starts -->
 
@@ -157,8 +297,77 @@ else {
 </div><!-- panel-heading row Ends -->
 
 </div><!-- panel-heading Ends -->
+<a href="index.php?insert_p_cat">
+
+<div class="panel-footer"><!-- panel-footer Starts -->
+
+<span class="pull-left"> Insert Product Categories </span>
+
+<span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+
+<div class="clearfix"></div>
+
+</div><!-- panel-footer Ends -->
+
+</a>
 
 <a href="index.php?view_p_cats">
+
+<div class="panel-footer"><!-- panel-footer Starts -->
+
+<span class="pull-left"> View Details </span>
+
+<span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+
+<div class="clearfix"></div>
+
+</div><!-- panel-footer Ends -->
+
+</a>
+
+</div><!-- panel panel-yellow Ends -->
+
+</div><!-- col-lg-3 col-md-6 Ends -->
+<div class="col-lg-3 col-md-6"><!-- col-lg-3 col-md-6 Starts -->
+
+<div class="panel panel-green"><!-- panel panel-yellow Starts -->
+
+<div class="panel-heading"><!-- panel-heading Starts -->
+
+<div class="row"><!-- panel-heading row Starts -->
+
+<div class="col-xs-3"><!-- col-xs-3 Starts -->
+
+<i class="fa fa-shopping-cart fa-5x"> </i>
+
+</div><!-- col-xs-3 Ends -->
+
+<div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
+
+<div class="huge"> <?php echo $count_categories; ?> </div>
+
+<div>Categories</div>
+
+</div><!-- col-xs-9 text-right Ends -->
+
+</div><!-- panel-heading row Ends -->
+
+</div><!-- panel-heading Ends -->
+<a href="index.php?insert_cat">
+
+<div class="panel-footer"><!-- panel-footer Starts -->
+
+<span class="pull-left"> Insert Categories </span>
+
+<span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+
+<div class="clearfix"></div>
+
+</div><!-- panel-footer Ends -->
+
+</a>
+
+<a href="index.php?view_cats">
 
 <div class="panel-footer"><!-- panel-footer Starts -->
 
@@ -391,9 +600,11 @@ View All Orders <i class="fa fa-arrow-circle-right" ></i>
 <h5 class="text-muted">About</h5>
 
 <p>
-<?php echo $admin_about; ?>
+<?php echo $admin_about; ?><a href="index.php?user_profile=<?php echo $admin_id; ?>"> User Profile </a>
 </p>
-
+<h3><a href="index.php?insert_user">Insert User</a></h3>
+<br>
+<a href="index.php?view_users">View Users</a>
 </div><!-- mb-md Ends -->
 
 </div><!-- panel-body Ends -->

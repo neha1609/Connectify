@@ -9,7 +9,7 @@ echo "<script>window.open('login.php','_self')</script>";
 }
 
 else {
-
+include("includes/header.php");
 ?>
 
 <div class="row" ><!-- 1 row Starts -->
@@ -142,4 +142,6 @@ $i++;
 </div><!-- 2 row Ends -->
 
 
-<?php } ?>
+<?php } 
+include("includes/footer.php");
+?>

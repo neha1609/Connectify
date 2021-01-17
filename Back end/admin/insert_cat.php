@@ -7,7 +7,7 @@ echo "<script>window.open('login.php','_self')</script>";
 }
 
 else {
-
+include("includes/header.php");
 
 ?>
 
@@ -125,4 +125,6 @@ echo "<script> window.open('index.php?view_cats','_self') </script>";
 
 ?>
 
-<?php } ?>
+<?php } 
+include("includes/footer.php");
+?>

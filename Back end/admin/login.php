@@ -5,58 +5,7 @@ session_start();
 include("includes/dbcon.php");
 
 ?>
-<!--<!DOCTYPE HTML>
-<html>
 
-<head>
-
-<title>Admin Login</title>
-
-<link rel="stylesheet" href="css/bootstrap.min.css" >
-
-<link rel="stylesheet" href="css/login.css" >
-<link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Overpass:wght@900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;800&family=Ubuntu&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-<?php
-/*include("includes/header.php");*/
-?>
-
-	<div style="background-image: url('image/pic2.jpg');
-     background-size:width:100%; background-repeat: no-repeat; height:100vh; padding-top:80px; margin-left:0; margin-right:0; background-position:center ">
-
-<form class="form-login" action="" method="post" >
-
-<h2 class="form-login-heading" >Admin Login</h2>
-
-<input type="text" class="form-control" name="admin_email" placeholder="Email Address" required >
-
-<input type="password" class="form-control" name="admin_pass" placeholder="Password" required >
-
-<button class="btn btn-lg btn-primary btn-block" type="submit" name="admin_login" >
-
-Log in
-
-</button>
-
-
-
-</div>
-</div>
-
-<?php /*include("includes/footer.php");*/
-?>
-
-</body>
-
-
-</html>-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 

@@ -113,7 +113,7 @@ $admin_job = $row_admin['admin_job'];
 
 <td><?php echo $admin_email; ?></td>
 
-<td><img src="admin_images/<?php echo $admin_image; ?>" width="60" height="60" ></td>
+<td><img src="image/<?php echo $admin_image; ?>" width="60" height="60" ></td>
 
 <td><?php echo $admin_country; ?></td>
 

@@ -19,7 +19,7 @@ include("includes/header.php");
 
 <li class="active">
 
-<i class="fa fa-dashboard"></i> Dashboard / View Customers
+<i class="fa fa-dashboard"></i> Dashboard / View Vendors
 
 </li>
 
@@ -39,7 +39,7 @@ include("includes/header.php");
 
 <h3 class="panel-title"><!-- panel-title Starts -->
 
-<i class="fa fa-money fa-fw"></i> View Customers
+<i class="fa fa-money fa-fw"></i> View Vendors
 
 </h3><!-- panel-title Ends -->
 
@@ -56,15 +56,15 @@ include("includes/header.php");
 
 <tr>
 
-<th>Customer No:</th>
-<th>Customer Name:</th>
-<th>Customer Email:</th>
-<th>Customer Image:</th>
-<th>Customer Country:</th>
-<th>Customer City:</th>
-<th>Customer Phone Number:</th>
-<th>Customer Delete:</th>
-<th>Customer Edit:</th>
+<th>Vendor No:</th>
+<th>Vendor Name:</th>
+<th>Vendor Email:</th>
+<th>Vendor Image:</th>
+<th>Vendor Country:</th>
+<th>Vendor City:</th>
+<th>Vendor Phone Number:</th>
+<th>Vendor Delete:</th>
+<th>Vendor Edit:</th>
 
 
 </tr>
@@ -78,13 +78,13 @@ include("includes/header.php");
 
 $i=0;
 
-$get_c = "select * from customers";
+$get_c = "select * from vendor";
 
 $run_c = mysqli_query($con,$get_c);
 
 while($row_c=mysqli_fetch_array($run_c)){
 
-$c_id = $row_c['customer_id'];
+$c_id = $row_c['vendor_id'];
 
 $c_name = $row_c['name'];
 
@@ -123,7 +123,7 @@ $i++;
 
 <td>
 
-<a href="index.php?customer_delete=<?php echo $c_id; ?>" >
+<a href="index.php?vendor_delete=<?php echo $c_id; ?>" >
 
 <i class="fa fa-trash-o" ></i> Delete
 
@@ -133,7 +133,7 @@ $i++;
 </td>
 <td>
 
-<a href="index.php?customer_edit=<?php echo $c_id; ?>" >
+<a href="index.php?vendor_edit=<?php echo $c_id; ?>" >
 
 <i class="fa fa-trash-o" ></i> Edit
 

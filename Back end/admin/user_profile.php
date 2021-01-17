@@ -9,7 +9,8 @@ echo "<script>window.open('login.php','_self')</script>";
 }
 
 else {
-
+include("includes/dbcon.php");
+include("includes/header.php");
 ?>
 
 <?php
@@ -188,7 +189,7 @@ $admin_about = $row_admin['admin_about'];
 
 <input type="file" name="admin_image" class="form-control" required>
 <br>
-<img src="admin_images/<?Php echo $admin_image; ?>" width="70" height="70" >
+<img src="image/<?php echo $admin_image; ?>" width="70" height="70" >
 
 </div><!-- col-md-6 Ends -->
 
@@ -242,7 +243,7 @@ $admin_image = $_FILES['admin_image']['name'];
 
 $temp_admin_image = $_FILES['admin_image']['tmp_name'];
 
-move_uploaded_file($temp_admin_image,"admin_images/$admin_image");
+move_uploaded_file($temp_admin_image,"image/$admin_image");
 
 $update_admin = "update admins set admin_name='$admin_name',admin_email='$admin_email',admin_pass='$admin_pass',admin_image='$admin_image',admin_contact='$admin_contact',admin_job='$admin_job',admin_about='$admin_about' where admin_id='$admin_id'";
 
@@ -266,4 +267,6 @@ session_destroy();
 
 
 
-<?php }  ?>
+<?php }  
+include("includes/footer.php");
+?>

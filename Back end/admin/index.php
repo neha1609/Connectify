@@ -53,10 +53,17 @@ $get_customers = "select * from customers";
 $run_customers = mysqli_query($con,$get_customers);
 $count_customers = mysqli_num_rows($run_customers);
 
+$get_vendors = "select * from vendor";
+$run_vendors = mysqli_query($con,$get_vendors);
+$count_vendors = mysqli_num_rows($run_vendors);
+
 $get_p_categories = "select * from product_categories";
 $run_p_categories = mysqli_query($con,$get_p_categories);
 $count_p_categories = mysqli_num_rows($run_p_categories);
 
+$get_categories = "select * from categories";
+$run_categories = mysqli_query($con,$get_categories);
+$count_categories = mysqli_num_rows($run_categories);
 
 $get_pending_orders = "select * from pending_orders";
 $run_pending_orders = mysqli_query($con,$get_pending_orders);
@@ -110,6 +117,68 @@ include("dashboard.php");
 if(isset($_GET['insert_product'])){
 
 include("insert_product.php");
+
+}
+
+if(isset($_GET['insert_customer'])){
+
+include("insert_customer.php");
+
+}
+if(isset($_GET['customer_edit'])){
+
+include("customer_edit.php");
+
+}
+if(isset($_GET['customer_delete'])){
+
+include("customer_delete.php");
+
+}
+
+if(isset($_GET['insert_vendor'])){
+
+include("insert_vendor.php");
+
+}
+
+if(isset($_GET['view_vendor'])){
+
+include("view_vendor.php");
+
+}
+
+if(isset($_GET['vendor_edit'])){
+
+include("vendor_edit.php");
+
+}
+if(isset($_GET['vendor_delete'])){
+
+include("vendor_delete.php");
+
+}
+
+if(isset($_GET['insert_d_agent'])){
+
+include("insert_vendor.php");
+
+}
+
+if(isset($_GET['view_d_agent'])){
+
+include("view_vendor.php");
+
+}
+
+if(isset($_GET['d_agent_edit'])){
+
+include("vendor_edit.php");
+
+}
+if(isset($_GET['d_agent_delete'])){
+
+include("vendor_delete.php");
 
 }
 
@@ -178,6 +247,7 @@ if(isset($_GET['edit_cat'])){
 include("edit_cat.php");
 
 }
+
 
 if(isset($_GET['insert_slide'])){
 
