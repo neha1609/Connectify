@@ -13,17 +13,17 @@ else {
 <?php
 include("includes/header.php");
 
-if(isset($_GET['vendor_edit'])){
+if(isset($_GET['d_agent_edit'])){
 
-$edit_id = $_GET['vendor_edit'];
+$edit_id = $_GET['d_agent_edit'];
 
-$get_p = "select * from vendor where vendor_id='$edit_id'";
+$get_p = "select * from d_agent where d_agent_id='$edit_id'";
 
 $run_edit = mysqli_query($con,$get_p);
 
 $row_edit = mysqli_fetch_array($run_edit);
 
-$c_id = $row_edit['vendor_id'];
+$c_id = $row_edit['d_agent_id'];
 
 $name = $row_edit['name'];
 
@@ -88,7 +88,7 @@ $cat_title = $row_cat['cat_title'];*/
 
 <li class="active">
 
-<i class="fa fa-dashboard"> </i> Dashboard / Edit Vendor
+<i class="fa fa-dashboard"> </i> Dashboard / Edit Delivery Agent
 
 </li>
 
@@ -109,7 +109,7 @@ $cat_title = $row_cat['cat_title'];*/
 
 <h3 class="panel-title">
 
-<i class="fa fa-money fa-fw"></i> Edit Vendor
+<i class="fa fa-money fa-fw"></i> Edit Delivery Agent
 
 </h3>
 
@@ -121,7 +121,7 @@ $cat_title = $row_cat['cat_title'];*/
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Vendor Name </label>
+<label class="col-md-3 control-label" > Delivery Agent Name </label>
 
 <div class="col-md-6" >
 
@@ -133,7 +133,7 @@ $cat_title = $row_cat['cat_title'];*/
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Vendor city </label>
+<label class="col-md-3 control-label" > Delivery Agent city </label>
 
 <div class="col-md-6" >
 <input type="text" name="city" class="form-control" required value="<?php echo $city; ?>">
@@ -170,7 +170,7 @@ echo "<option value='$p_cat_id' >$p_cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Vendor Email </label>
+<label class="col-md-3 control-label" > Delivery Agent Email </label>
 
 <div class="col-md-6" >
 	<input type="email" name="email" class="form-control" required value="<?php echo $email; ?>">
@@ -204,7 +204,7 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Vendor Image </label>
+<label class="col-md-3 control-label" > Delivery Agent Image </label>
 
 <div class="col-md-6" >
 
@@ -219,7 +219,7 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Vendor country </label>
+<label class="col-md-3 control-label" > Delivery Agent country </label>
 
 <div class="col-md-6" >
 
@@ -231,7 +231,7 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Vendor contact </label>
+<label class="col-md-3 control-label" > Delivery Agent contact </label>
 
 <div class="col-md-6" >
 
@@ -247,7 +247,7 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="col-md-6" >
 
-<input type="submit" name="update" value="Update Vendor Details" class="btn btn-primary form-control" >
+<input type="submit" name="update" value="Update Delivery Agent Details" class="btn btn-primary form-control" >
 
 </div>
 
@@ -286,15 +286,15 @@ move_uploaded_file($temp_name,"image/$image");
 
 $contact = $_POST['contact'];
 
-$update_cust = "update vendor set name='$name',city='$city',email='$email',country='$country',image='$image',contact='$contact' where vendor_id='$c_id'";
+$update_cust = "update d_agent set name='$name',city='$city',email='$email',country='$country',image='$image',contact='$contact' where d_agent_id='$c_id'";
 
 $run_cust = mysqli_query($con,$update_cust);
 
 if($run_cust){
 
-echo "<script> alert('Vendor Details has been updated successfully') </script>";
+echo "<script> alert('Delivery Agent Details has been updated successfully') </script>";
 
-echo "<script>window.open('index.php?view_vendor','_self')</script>";
+echo "<script>window.open('index.php?view_d_agent','_self')</script>";
 
 }
 

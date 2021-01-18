@@ -216,7 +216,7 @@ else {
 
 <div class="col-lg-3 col-md-6"><!-- col-lg-3 col-md-6 Starts -->
 
-<div class="panel panel-red"><!-- panel panel-green Starts -->
+<div class="panel panel-yellow"><!-- panel panel-green Starts -->
 
 <div class="panel-heading"><!-- panel-heading Starts -->
 
@@ -385,6 +385,50 @@ else {
 
 </div><!-- col-lg-3 col-md-6 Ends -->
 
+
+<div class="col-lg-3 col-md-6"><!-- col-lg-3 col-md-6 Starts -->
+
+<div class="panel panel-primary"><!-- panel panel-primary Starts -->
+
+<div class="panel-heading"><!-- panel-heading Starts -->
+
+<div class="row"><!-- panel-heading row Starts -->
+
+<div class="col-xs-3"><!-- col-xs-3 Starts -->
+
+<i class="fa fa-support fa-5x"> </i>
+
+</div><!-- col-xs-3 Ends -->
+
+<div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
+
+<div class="huge"> <?php echo $count_pending_orders; ?> </div>
+
+<div>Orders</div>
+
+</div><!-- col-xs-9 text-right Ends -->
+
+</div><!-- panel-heading row Ends -->
+
+</div><!-- panel-heading Ends -->
+
+<a href="index.php?view_orders">
+
+<div class="panel-footer"><!-- panel-footer Starts -->
+
+<span class="pull-left"> View Details </span>
+
+<span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+
+<div class="clearfix"></div>
+
+</div><!-- panel-footer Ends -->
+
+</a>
+
+</div><!-- panel panel-red Ends -->
+
+</div><!-- col-lg-3 col-md-6 Ends -->
 
 <div class="col-lg-3 col-md-6"><!-- col-lg-3 col-md-6 Starts -->
 

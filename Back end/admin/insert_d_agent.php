@@ -19,7 +19,7 @@ include("includes/header.php");
 
 <li>
 
-<i class="fa fa-dashboard"></i> Dashboard / Insert Vendor
+<i class="fa fa-dashboard"></i> Dashboard / Insert Delivery Agent
 
 </li>
 
@@ -40,7 +40,7 @@ include("includes/header.php");
 
 <h3 class="panel-title"><!-- panel-title Starts -->
 
-<i class="fa fa-money fa-fw"></i> Insert Vendor
+<i class="fa fa-money fa-fw"></i> Insert Delivery Agent
 
 </h3><!-- panel-title Ends -->
 
@@ -52,11 +52,11 @@ include("includes/header.php");
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">Vendor Name</label>
+<label class="col-md-3 control-label">Delivery Agent Name</label>
 
 <div class="col-md-6">
 
-<input type="text" name="vend_name" class="form-control">
+<input type="text" name="ag_name" class="form-control">
 
 </div>
 
@@ -64,7 +64,7 @@ include("includes/header.php");
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">Vendor city</label>
+<label class="col-md-3 control-label">Delivery Agent city</label>
 
 <div class="col-md-6">
 
@@ -75,7 +75,7 @@ include("includes/header.php");
 </div><!-- form-group Ends -->
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">Vendor image</label>
+<label class="col-md-3 control-label">Delivery Agent image</label>
 
 <div class="col-md-6">
 
@@ -86,7 +86,7 @@ include("includes/header.php");
 </div>
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">Vendor Country</label>
+<label class="col-md-3 control-label">Delivery Agent Country</label>
 
 <div class="col-md-6">
 
@@ -97,7 +97,7 @@ include("includes/header.php");
 </div>
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">Vendor Email</label>
+<label class="col-md-3 control-label">Delivery Agent Email</label>
 
 <div class="col-md-6">
 
@@ -108,7 +108,7 @@ include("includes/header.php");
 </div>
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">Vendor contact</label>
+<label class="col-md-3 control-label">Delivery Agent contact</label>
 
 <div class="col-md-6">
 
@@ -124,7 +124,7 @@ include("includes/header.php");
 
 <div class="col-md-6">
 
-<input type="submit" name="submit" value="Add Vendor" class="btn btn-primary form-control">
+<input type="submit" name="submit" value="Add Delivery Agent" class="btn btn-primary form-control">
 
 </div>
 
@@ -144,7 +144,7 @@ include("includes/header.php");
 
 if(isset($_POST['submit'])){
 
-$name = $_POST['vend_name'];
+$name = $_POST['ag_name'];
 
 $city = $_POST['city'];
 $email = $_POST['email'];
@@ -156,15 +156,15 @@ move_uploaded_file($temp_name,"image/$image1");
 
 $contact = $_POST['contact'];
 
-$insert_cust = "insert into vendor (name,city,image,country,email,contact) values ('$name','$city','$image1','$country','$email','$contact')";
+$insert_ag = "insert into d_agent (name,city,image,country,email,contact) values ('$name','$city','$image1','$country','$email','$contact')";
 
-$run_cust = mysqli_query($con,$insert_cust);
+$run_ag = mysqli_query($con,$insert_ag);
 
-if($run_cust){
+if($run_ag){
 
-echo "<script> alert('New Vendor Has Been Added')</script>";
+echo "<script> alert('New Delivery Agent Has Been Added')</script>";
 
-echo "<script> window.open('index.php?view_vendor','_self') </script>";
+echo "<script> window.open('index.php?view_d_agent','_self') </script>";
 
 }
 

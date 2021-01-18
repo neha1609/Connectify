@@ -57,6 +57,10 @@ $get_vendors = "select * from vendor";
 $run_vendors = mysqli_query($con,$get_vendors);
 $count_vendors = mysqli_num_rows($run_vendors);
 
+$get_d_agent = "select * from d_agent";
+$run_d_agent = mysqli_query($con,$get_d_agent);
+$count_d_agent = mysqli_num_rows($run_d_agent);
+
 $get_p_categories = "select * from product_categories";
 $run_p_categories = mysqli_query($con,$get_p_categories);
 $count_p_categories = mysqli_num_rows($run_p_categories);
@@ -161,24 +165,24 @@ include("vendor_delete.php");
 
 if(isset($_GET['insert_d_agent'])){
 
-include("insert_vendor.php");
+include("insert_d_agent.php");
 
 }
 
 if(isset($_GET['view_d_agent'])){
 
-include("view_vendor.php");
+include("view_d_agent.php");
 
 }
 
 if(isset($_GET['d_agent_edit'])){
 
-include("vendor_edit.php");
+include("d_agent_edit.php");
 
 }
 if(isset($_GET['d_agent_delete'])){
 
-include("vendor_delete.php");
+include("d_agent_delete.php");
 
 }
 

@@ -17,20 +17,20 @@ else {
 
 <?php
 
-if(isset($_GET['vendor_delete'])){
+if(isset($_GET['d_agent_delete'])){
 
-$delete_id = $_GET['vendor_delete'];
+$delete_id = $_GET['d_agent_delete'];
 
-$delete_vendor = "delete from vendor where vendor_id='$delete_id'";
+$delete_d_agent = "delete from d_agent where d_agent_id='$delete_id'";
 
-$run_delete = mysqli_query($con,$delete_vendor);
+$run_delete = mysqli_query($con,$delete_d_agent);
 
 
 if($run_delete){
 
-echo "<script>alert('Vendor Has Been Deleted')</script>";
+echo "<script>alert('Delivery Agent Has Been Deleted')</script>";
 
-echo "<script>window.open('index.php?view_vendor','_self')</script>";
+echo "<script>window.open('index.php?view_d_agent','_self')</script>";
 
 
 }
