@@ -55,7 +55,36 @@
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap -m-4">
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+      <?php
+          $get_products = "select * from products";
+          $run_products = mysqli_query($con,$get_products);
+          while ($row_product = mysqli_fetch_array($run_products)) {
+            $cat_id = $row_product['cat_id'];
+            if($cat_id==1) {
+              $image = $row_product['product_img'];
+              $product_title = $row_product['product_title'];
+              $product_price = $row_product['product_price'];
+              ?>
+              <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <a class="block relative h-48 rounded overflow-hidden">
+                  <img alt="ecommerce" class="object-cover object-center w-40 h-70 block" src="image/<?php echo $image; ?>">
+                </a>
+                <div class="mt-4">
+                  <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BOOKS</h3>
+                  <h2 class="text-gray-900 title-font text-lg font-medium"><?php echo $product_title; ?></h2>
+                  <p class="mt-1">Rs. <?php echo $product_price; ?></p>
+                </div>
+              </div>
+              <?php
+
+            }
+
+            
+          }
+        ?>
+
+
+      <!--div class="lg:w-1/4 md:w-1/2 p-4 w-full">
         <a class="block relative h-48 rounded overflow-hidden">
           <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260">
         </a>
@@ -134,7 +163,7 @@
           <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
           <p class="mt-1">$18.40</p>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </section>

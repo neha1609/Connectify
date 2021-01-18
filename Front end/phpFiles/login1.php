@@ -1,27 +1,27 @@
 <?php
-session_start();
-include("dbcon.php");
-if(isset($_POST) && !empty($_POST))
-{
- //echo "<pre>";print_r($_POST);echo "</pre>";
-$email=$_POST['email'];
-$password=md5($_POST['password']);
-$sql="SELECT * FROM users WHERE email='$email'AND password='$password'";
-if($result=$con->query($sql))
-{
-	$row=$result->fetch_assoc();
-	if(!empty($row))
-	{
-		//echo "Welcome ".$row['name'];exit;
-		$_SESSION['user']=$row;
-		header("Location:about us.php");
+	session_start();
+	include("dbcon.php");
+		if(isset($_POST) && !empty($_POST))
+		{
+		 //echo "<pre>";print_r($_POST);echo "</pre>";
+			$email=$_POST['email'];
+			$password=md5($_POST['password']);
+			$sql="SELECT * FROM users WHERE email='$email'AND password='$password'";
+			if($result=$con->query($sql))
+			{
+				$row=$result->fetch_assoc();
+				if(!empty($row))
+				{
+					//echo "Welcome ".$row['name'];exit;
+					$_SESSION['user']=$row;
+					header("Location:about us.php");
+				}
+				else
+				{
+				echo "email/password is wrong";
+			}
+		}
 	}
-	else
-	{
-	echo "email/password is wrong";
-}
-}
-}
 ?>
 <!doctype html>
 <html>

@@ -58,10 +58,10 @@
     <div class="flex flex-wrap -m-4">
       <div class="p-4 lg:w-1/2">
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="image/hemangee.jpg">
+          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-49 object-cover object-center sm:mb-0 mb-4" src="image/hemangee.jpg">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Hemangee De</h2>
-            <h3 class="text-gray-500 mb-3">UI Developer</h3>
+            <h3 class="text-gray-500 mb-3">Full Stack Developer</h3>
             <p class="mb-4">Senior UI Developer.</p>
             <span class="inline-flex">
               <a class="text-gray-500">
@@ -85,7 +85,7 @@
       </div>
       <div class="p-4 lg:w-1/2">
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="image/dpk.jpeg">
+          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-49 object-cover object-center sm:mb-0 mb-4" src="image/dpk.jpeg">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Deepak Kumar</h2>
             <h3 class="text-gray-500 mb-3">UI Developer</h3>
@@ -112,7 +112,7 @@
       </div>
       <div class="p-4 lg:w-1/2">
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="image/kp.jpg">
+          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-49 object-cover object-center sm:mb-0 mb-4" src="image/kp.jpg">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Kundan Prakash Jha</h2>
             <h3 class="text-gray-500 mb-3">UI Developer</h3>
@@ -139,11 +139,11 @@
       </div>
       <div class="p-4 lg:w-1/2">
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://dummyimage.com/206x206">
+          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-49 object-cover object-center sm:mb-0 mb-4" src="image/nehaj.jpg">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Neha Jhawar</h2>
-            <h3 class="text-gray-500 mb-3">Designer</h3>
-            <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+            <h3 class="text-gray-500 mb-3">Back End Developer</h3>
+            <p class="mb-4">Coding is cool.</p>
             <span class="inline-flex">
               <a class="text-gray-500">
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">

@@ -9,9 +9,9 @@ echo "<script>window.open('../checkout.php','_self')</script>";
 
 }else {
 
-include("includes/db.php");
+include("includes/dbcon.php");
 
-include("functions/functions.php");
+include("../functions/functions.php");
 
 if(isset($_GET['order_id'])){
 
@@ -74,7 +74,7 @@ Shopping Cart Total Price: <?php total_price(); ?>, Total Items <?php items(); ?
 <ul class="menu"><!-- menu Starts -->
 
 <li>
-<a href="../customer_register.php">
+<a href="signup.php">
 Register
 </a>
 </li>
