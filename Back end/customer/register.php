@@ -13,11 +13,11 @@
 		$password=md5($_POST['password']);
 		$country=$_POST['country'];
 		$contact=$_POST['contact'];
+		echo $email;
 
-
-		//echo $password;
-		$sql="INSERT INTO user(profile_image,name,email,password, city, country, contact) VALUES('$pic', '$name','$email','$password', '$city', '$country', '$contact')";
-		//echo $sql;
+		echo $password;
+		$sql="INSERT INTO customers(profile_image,name,email,password, city, country, contact) VALUES('$pic', '$name','$email','$password', '$city', '$country', '$contact')";
+		echo $sql;
 		if($con->query($sql))
 			echo "Signup done!";
 		else 
