@@ -49,7 +49,7 @@ $query = "insert into cart (p_id,ip_add,qty) values ('$p_id','$ip_add','$product
 
 $run_query = mysqli_query($con,$query);
 
-echo "<script>window.open('cart2.php','_self')</script>";
+echo "<script>window.open('cart2.php?id=<?php echo ip_add;?>','_self')</script>";
 
 }
 

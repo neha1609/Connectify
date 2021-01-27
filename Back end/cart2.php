@@ -5,7 +5,7 @@ session_start();
 
 include("includes/dbcon.php");
 
-//include("functions/functions.php");
+include("functions/functions.php");
 
 ?>
 <!DOCTYPE html>
@@ -84,16 +84,34 @@ include("includes/dbcon.php");
                             <thead>
                             <tr>
                                 <th>Product</th>
-                                <th>Description</th>
+                                <th>Title</th>
                                 <th>Qty</th>
                                 <th>Price</th>
                                 <th>Total</th>
                             </tr>
                             </thead>
                             <tbody>
+                              <?php
+                              //$ip_add=getRealUserIp();
+                              //echo $ip_add;
+                              if(isset($_GET['id'])){
+
+                              $ip_add = $_GET['id'];
+                              $get_products = "select * from cart where ip_add=$ip_add";
+                              $run_products = mysqli_query($con,$get_products);
+                              while ($row_product = mysqli_fetch_array($run_products)) {
+                                  $pro_id=$row_product['p_id'];
+                                  $get_p = "select * from products where product_id=$pro_id";
+                                  $run_p = mysqli_query($con,$get_p);
+                                  if($row_p = mysqli_fetch_array($run_p)){
+                                  $image = $row_p['product_img'];
+                                  $product_title = $row_p['product_title'];
+                                  $product_desc  = $row_p['product_desc'];
+                                  $product_price = $row_p['product_price'];
+                                  ?>
                                 <tr>
-                                    <td><img src="https://via.placeholder.com/400x200/FFB6C1/000000" class="img-cart"></td>
-                                    <td><strong>Product 1</strong><p>Size : 26</p></td>
+                                    <td><img src="image/<?php echo $image; ?>" class="img-cart"></td>
+                                    <td><strong><?php echo $product_title; ?></strong></td>
                                     <td>
                                     <form class="form-inline">
                                         <input class="form-control" type="text" value="1">
@@ -101,10 +119,15 @@ include("includes/dbcon.php");
                                         <a href="#" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
                                     </form>
                                     </td>
-                                    <td>$54.00</td>
-                                    <td>$54.00</td>
+                                    <td><?php echo $product_price; ?></td>
+                                    <td><?php //echo total_price(); ?></td>
                                 </tr>
-                                <tr>
+                                <?php
+                              }
+                              }
+                            }
+                                ?>
+                                <!--<tr>
                                     <td><img src="https://via.placeholder.com/400x200/87CEFA/000000" class="img-cart"></td>
                                     <td><strong>Product 2</strong><p>Size : M</p></td>
                                     <td>
@@ -131,7 +154,7 @@ include("includes/dbcon.php");
                                 <tr>
                                     <td colspan="4" class="text-right"><strong>Total</strong></td>
                                     <td>$88.00</td>
-                                </tr>
+                                </tr>-->
                             </tbody>
                         </table>
                     </div>
