@@ -43,9 +43,9 @@ If you have any questions, please feel free to <a href="../contact.php" > contac
 
 <?php
 
-$customer_session = $_SESSION['customer_email'];
+$customer_session = $_SESSION['email'];
 
-$get_customer = "select * from customers where customer_email='$customer_session'";
+$get_customer = "select * from customers where email='$customer_session'";
 
 $run_customer = mysqli_query($con,$get_customer);
 

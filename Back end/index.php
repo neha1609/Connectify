@@ -1,5 +1,7 @@
 <?php
+  session_start();
   include("includes/dbcon.php");
+  include("functions/functions.php");
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +50,33 @@
     <!--</div>
   </header>-->
 <!-- a new section here  -->
+<section>
+  <header>
+  <div>
+    <li>
+<?php
+
+if(!isset($_SESSION['email'])){
+
+echo "<a href='checkout.php' >My Account</a>";
+
+}
+else{
+
+echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+
+}
+
+
+?>
+</li>
+
+<li>
+<a href="cart.php"> Shopping Cart </a>
+</li>
+  </div>
+</header>
+</section>
      <section class="section1">
        <div style="background-image: url('image/pic2.jpg');
      background-size:width:100%; background-repeat: no-repeat; height:100vh; padding-top:80px; margin-left:0; margin-right:0; background-position:center ">

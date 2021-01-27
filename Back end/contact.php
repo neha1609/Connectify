@@ -58,7 +58,7 @@
 
       <div class="lg:w-1/2 md:w-2/3 mx-auto">
         <div class="flex flex-wrap -m-2">
-          <form action="" method="post">
+          <form action="send_mail.php" method="post">
       
           <div class="p-2 w-1/2">
 
@@ -124,7 +124,7 @@
 
 
 <?php
-  if(isset($_POST['submit'])) {
+  /*if(isset($_POST['submit'])) {
     $email = $_POST['email'];
     $name = $_POST['name'];
     $message = $_POST['message'];
@@ -135,7 +135,7 @@
 
     mail($to, $subject, $message, $headers);
 
-  }
+  }*/
   
 ?>
 
