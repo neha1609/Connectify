@@ -286,7 +286,15 @@ move_uploaded_file($temp_name,"image/$image");
 
 $contact = $_POST['contact'];
 
-$update_cust = "update customers set name='$name',city='$city',email='$email',country='$country',image='$image',contact='$contact' where customer_id='$c_id'";
+$get_p = "select * from customers where customer_id=$c_id";
+$run_p = mysqli_query($con,$get_p);
+
+if($row_p = mysqli_fetch_array($run_p))
+{
+$password=$row_p['password'];
+}
+
+$update_cust = "update customers set name='$name',city='$city',email='$email',country='$country',image='$image',contact='$contact',password='$password' where customer_id='$c_id'";
 
 $run_cust = mysqli_query($con,$update_cust);
 
