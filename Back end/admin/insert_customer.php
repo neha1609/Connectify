@@ -155,8 +155,10 @@ $temp_name = $_FILES['image1']['tmp_name'];
 move_uploaded_file($temp_name,"image/$image1");
 
 $contact = $_POST['contact'];
+$p="12345";
+$password=md5($p);
 
-$insert_cust = "insert into customers (name,city,image,country,email,contact) values ('$name','$city','$image1','$country','$email','$contact')";
+$insert_cust = "insert into customers (name,city,image,country,email,contact,password) values ('$name','$city','$image1','$country','$email','$contact','$password')";
 
 $run_cust = mysqli_query($con,$insert_cust);
 
