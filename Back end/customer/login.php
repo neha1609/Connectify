@@ -17,7 +17,8 @@
         {
           //echo "Welcome ".$row['name'];exit;
           $_SESSION['customers']=$row;
-          header("Location:../index.php");
+          //header("Location:../index.php");
+          echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
         }
         else
         {

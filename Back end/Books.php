@@ -61,12 +61,13 @@
           while ($row_product = mysqli_fetch_array($run_products)) {
             $cat_id = $row_product['cat_id'];
             if($cat_id==1) {
+              $pro_id=$row_product['product_id'];
               $image = $row_product['product_img'];
               $product_title = $row_product['product_title'];
               $product_price = $row_product['product_price'];
               ?>
               <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block relative h-48 rounded overflow-hidden">
+                <a class="block relative h-48 rounded overflow-hidden" href="product.php?id=<?php echo $pro_id; ?>">
                   <img alt="ecommerce" class="object-cover object-center w-40 h-70 block" src="image/<?php echo $image; ?>">
                 </a>
                 <div class="mt-4">
@@ -81,6 +82,11 @@
 
             
           }
+        ?>
+        <?php
+        if(isset($_GET['id'])){
+          includes('product.php');
+        }
         ?>
 
 

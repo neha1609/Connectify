@@ -1,6 +1,8 @@
 <?php
 
-$db = mysqli_connect("localhost","root","","ecom_store");
+//$db = mysqli_connect("localhost","root","","connectify");
+$con= new mysqli("localhost","root","","connectify");
+//include("../includes/dbcon.php");
 
 /// IP address code starts /////
 function getRealUserIp(){
@@ -16,37 +18,38 @@ function getRealUserIp(){
 /// add_cart function Starts /////
 
 function add_cart(){
-global $db;
+global $con;
 
 if(isset($_GET['add_cart'])){
 
 $ip_add = getRealUserIp();
 
 $p_id = $_GET['add_cart'];
+//echo "<script>alert('Recieved p id')</script>";
 
 $product_qty = $_POST['product_qty'];
 
-$product_size = $_POST['product_size'];
+//$product_size = $_POST['product_size'];
 
 
 $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id'";
 
-$run_check = mysqli_query($db,$check_product);
+$run_check = mysqli_query($con,$check_product);
 
 if(mysqli_num_rows($run_check)>0){
 
 echo "<script>alert('This Product is already added in cart')</script>";
 
-echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
+echo "<script>window.open('cart2.php','_self')</script>";
 
 }
 else {
 
-$query = "insert into cart (p_id,ip_add,qty,size) values ('$p_id','$ip_add','$product_qty','$product_size')";
+$query = "insert into cart (p_id,ip_add,qty) values ('$p_id','$ip_add','$product_qty')";
 
-$run_query = mysqli_query($db,$query);
+$run_query = mysqli_query($con,$query);
 
-echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
+echo "<script>window.open('cart2.php','_self')</script>";
 
 }
 

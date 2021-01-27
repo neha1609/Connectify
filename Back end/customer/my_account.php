@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['customer_email'])){
+if(!isset($_SESSION['email'])){
 
 echo "<script>window.open('../checkout.php','_self')</script>";
 
@@ -12,7 +12,7 @@ echo "<script>window.open('../checkout.php','_self')</script>";
 
 
 
-include("includes/db.php");
+include("includes/dbcon.php");
 
 include("functions/functions.php");
 
@@ -21,7 +21,7 @@ include("functions/functions.php");
 <html>
 
 <head>
-<title>E commerce Store </title>
+<title>My Accounts</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -46,14 +46,14 @@ include("functions/functions.php");
 <a href="#" class="btn btn-success btn-sm" >
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if(!isset($_SESSION['email'])){
 
 echo "Welcome :Guest";
 
 
 }else{
 
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+echo "Welcome : " . $_SESSION['email'] . "";
 
 }
 
@@ -71,7 +71,7 @@ Shopping Cart Total Price: <?php total_price(); ?>, Total Items <?php items(); ?
 <ul class="menu"><!-- menu Starts -->
 
 <li>
-<a href="../customer_register.php">
+<a href="../register.php">
 Register
 </a>
 </li>
@@ -79,7 +79,7 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if(!isset($_SESSION['email'])){
 
 echo "<a href='../checkout.php' >My Account</a>";
 
@@ -103,7 +103,7 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if(!isset($_SESSION['email'])){
 
 echo "<a href='../checkout.php'> Login </a>";
 
@@ -171,7 +171,7 @@ echo "<a href='logout.php'> Logout </a>";
 <li class="active">
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if(!isset($_SESSION['email'])){
 
 echo "<a href='../checkout.php' >My Account</a>";
 
@@ -256,7 +256,7 @@ echo "<a href='my_account.php?my_orders'>My Account</a>";
 <ul class="breadcrumb" ><!-- breadcrumb Starts -->
 
 <li>
-<a href="index.php">Home</a>
+<a href="../index.php">Home</a>
 </li>
 
 <li>My Account</li>
@@ -269,7 +269,7 @@ echo "<a href='my_account.php?my_orders'>My Account</a>";
 
 <div class="col-md-3"><!-- col-md-3 Starts -->
 
-<?php include("includes/sidebar.php"); ?>
+<?php //include("includes/sidebar.php"); ?>
 
 </div><!-- col-md-3 Ends -->
 
