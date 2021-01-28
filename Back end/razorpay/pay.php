@@ -3,7 +3,8 @@
 require('config.php');
 require('razorpay-php/Razorpay.php');
 session_start();
-
+//session_register('total');
+include('../functions/functions.php');
 // Create the Razorpay Order
 
 use Razorpay\Api\Api;
@@ -14,9 +15,18 @@ $api = new Api($keyId, $keySecret);
 // We create an razorpay order using orders api
 // Docs: https://docs.razorpay.com/docs/orders
 //
+$t=$_SESSION['total'];
+$cust=$_SESSION['customers'];
+$name=$cust['name'];
+$image=$cust['image'];
+$email=$cust['email'];
+$contact=$cust['contact'];
+//$ip_add=getRealUserIp();
+//$t=total_price();
 $orderData = [
     'receipt'         => 3456,
-    'amount'          => 2000 * 100, // 2000 rupees in paise
+    'amount'          => $t* 100,
+    //'amount'          => 2000 * 100, // 2000 rupees in paise
     'currency'        => 'INR',
     'payment_capture' => 1 // auto capture
 ];
@@ -47,16 +57,16 @@ if (isset($_GET['checkout']) and in_array($_GET['checkout'], ['automatic', 'manu
 $data = [
     "key"               => $keyId,
     "amount"            => $amount,
-    "name"              => "DJ Tiesto",
-    "description"       => "Tron Legacy",
-    "image"             => "https://s29.postimg.org/r6dj1g85z/daft_punk.jpg",
+    "name"              => $name,
+    "description"       => "Payment",
+    "image"             => "image/$image",
     "prefill"           => [
-    "name"              => "Daft Punk",
-    "email"             => "customer@merchant.com",
-    "contact"           => "9999999999",
+    "name"              => $name,
+    "email"             => $email,
+    "contact"           => $contact,
     ],
     "notes"             => [
-    "address"           => "Hello World",
+    "address"           => "",
     "merchant_order_id" => "12312321",
     ],
     "theme"             => [

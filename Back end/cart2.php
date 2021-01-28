@@ -61,21 +61,39 @@ include("functions/functions.php");
 <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 <div class="container bootstrap snippets bootdey">
     <div class="col-md-9 col-sm-8 content">
-        <div class="row">
+        <!--<div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
                   <li><a href="#">Home</a></li>
                   <li class="active">Cart</li>
                 </ol>
             </div>
-        </div>
+        </div>-->
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-info panel-shadow">
                     <div class="panel-heading">
                         <h3>
-                            <img class="img-circle img-thumbnail" src="https://bootdey.com/img/Content/user_3.jpg">
-                            Matew darfkmoun
+                            <?php
+                            if(!isset($_SESSION['customers'])){
+
+                            echo "<a href='login.php' >login</a>";
+
+                            }
+                            else{
+                              $row=$_SESSION['customers'];
+
+                              $c_id = $row['customer_id'];
+
+                              $c_name = $row['name'];
+                              //$c_img = $row['image'];
+                              //echo $c_img;
+                              ?>
+                              <!--<img class="img-circle img-thumbnail" src="image/<?php //echo $c_img; ?>">-->
+                              <?php
+                            echo "$c_name";
+                          
+                            }?>
                         </h3>
                     </div>
                     <div class="panel-body">
@@ -92,15 +110,19 @@ include("functions/functions.php");
                             </thead>
                             <tbody>
                               <?php
+                              $con= new mysqli("localhost","root","","connectify");
                               //$ip_add=getRealUserIp();
                               //echo $ip_add;
                               if(isset($_GET['id'])){
 
                               $ip_add = $_GET['id'];
-                              $get_products = "select * from cart where ip_add=$ip_add";
-                              $run_products = mysqli_query($con,$get_products);
-                              while ($row_product = mysqli_fetch_array($run_products)) {
+                              $get_products = "Select * from cart where ip_add='$ip_add'";
+
+                              if($run_products = $con->query($get_products)){
+                              //echo $run_products;
+                              while ($row_product = $run_products->fetch_assoc()) {
                                   $pro_id=$row_product['p_id'];
+                                  $qty=$row_product['qty'];
                                   $get_p = "select * from products where product_id=$pro_id";
                                   $run_p = mysqli_query($con,$get_p);
                                   if($row_p = mysqli_fetch_array($run_p)){
@@ -114,17 +136,21 @@ include("functions/functions.php");
                                     <td><strong><?php echo $product_title; ?></strong></td>
                                     <td>
                                     <form class="form-inline">
-                                        <input class="form-control" type="text" value="1">
-                                        <button rel="tooltip" class="btn btn-default"><i class="fa fa-pencil"></i></button>
-                                        <a href="#" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
+                                        <input class="form-control" type="text" value="<?php echo $qty; ?>">
+                                        <!--<button rel="tooltip" class="btn btn-default"><i class="fa fa-pencil"></i></button>-->
+                                        <!--<a href="#" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>-->
                                     </form>
                                     </td>
                                     <td><?php echo $product_price; ?></td>
-                                    <td><?php //echo total_price(); ?></td>
+                                    <td><?php 
+                                    $t=$product_price *$qty;
+                                    echo $t;
+                                    //echo total_price(); ?></td>
                                 </tr>
                                 <?php
                               }
                               }
+                            }
                             }
                                 ?>
                                 <!--<tr>
@@ -155,13 +181,18 @@ include("functions/functions.php");
                                     <td colspan="4" class="text-right"><strong>Total</strong></td>
                                     <td>$88.00</td>
                                 </tr>-->
+
                             </tbody>
                         </table>
                     </div>
                 </div>
                 </div>
-                <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Continue Shopping</a>
-                <a href="#" class="btn btn-primary pull-right">Next<span class="glyphicon glyphicon-chevron-right"></span></a>
+                <br>
+                <div colspan="4" class="text-right"><strong>Total : </strong> <?php total_price(); ?></div>
+                <br>
+                <a href="index.php" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Continue Shopping</a>
+
+                <a href="checkout.php?payment_options" class="btn btn-primary pull-right">Checkout<span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
     </div>
