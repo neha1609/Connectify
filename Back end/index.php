@@ -53,23 +53,7 @@
 <section>
   <header>
   <div>
-    <li>
-<?php
-
-if(!isset($_SESSION['email'])){
-
-echo "<a href='checkout.php' >My Account</a>";
-
-}
-else{
-
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
-
-}
-
-
-?>
-</li>
+    
 
 <li>
   <?php

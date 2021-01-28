@@ -56,8 +56,28 @@ include("includes/header.php");
 
 <div class="col-md-6">
 
-<input type="text" name="cat_title" class="form-control">
+<select name="cat_title" class="form-control">
+  <?php
+	
+	$p_cat_t="select * from categories";
+  //echo $p_cat_t;
+	//$run_p_c=mysqli_query($con,$p_cat_t);
+  //echo $run_p_c;
+	if($result=$con->query($p_cat_t))
+	{
+	while($row=$result->fetch_assoc() )
+	{
+		$p_c_title=$row['cat_title'];
 
+
+  ?>
+  <option value="<?php   echo $p_c_title;   ?>" > <?php   echo $p_c_title;   ?> </option>
+  <?php
+	}
+}
+
+  ?>
+</select>
 </div>
 
 </div><!-- form-group Ends -->
