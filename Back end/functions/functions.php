@@ -27,7 +27,7 @@ $ip_add = getRealUserIp();
 $p_id = $_GET['add_cart'];
 //echo "<script>alert('Recieved p id')</script>";
 
-$product_qty = $_POST['product_qty'];
+$product_qty =1; //$_POST['product_qty'];
 
 //$product_size = $_POST['product_size'];
 
@@ -38,9 +38,9 @@ $run_check = mysqli_query($con,$check_product);
 
 if(mysqli_num_rows($run_check)>0){
 
-echo "<script>alert('This Product is already added in cart')</script>";
+echo "<script>alert('This Product is already added in cart $ip_add')</script>";
 
-echo "<script>window.open('cart2.php','_self')</script>";
+echo "<script>window.open('cart2.php?id=$ip_add','_self')</script>";
 
 }
 else {
@@ -48,8 +48,8 @@ else {
 $query = "insert into cart (p_id,ip_add,qty) values ('$p_id','$ip_add','$product_qty')";
 
 $run_query = mysqli_query($con,$query);
-
-echo "<script>window.open('cart2.php?id=<?php echo ip_add;?>','_self')</script>";
+//echo $ip_add;
+echo "<script>window.open('cart2.php?id=$ip_add','_self')</script>";
 
 }
 
@@ -67,13 +67,13 @@ echo "<script>window.open('cart2.php?id=<?php echo ip_add;?>','_self')</script>"
 
 function items(){
 
-global $db;
+global $con;
 
 $ip_add = getRealUserIp();
 
 $get_items = "select * from cart where ip_add='$ip_add'";
 
-$run_items = mysqli_query($db,$get_items);
+$run_items = mysqli_query($con,$get_items);
 
 $count_items = mysqli_num_rows($run_items);
 
@@ -88,7 +88,7 @@ echo $count_items;
 
 function total_price(){
 
-global $db;
+global $con;
 
 $ip_add = getRealUserIp();
 
@@ -96,7 +96,7 @@ $total = 0;
 
 $select_cart = "select * from cart where ip_add='$ip_add'";
 
-$run_cart = mysqli_query($db,$select_cart);
+$run_cart = mysqli_query($con,$select_cart);
 
 while($record=mysqli_fetch_array($run_cart)){
 
@@ -106,7 +106,7 @@ $pro_qty = $record['qty'];
 
 $get_price = "select * from products where product_id='$pro_id'";
 
-$run_price = mysqli_query($db,$get_price);
+$run_price = mysqli_query($con,$get_price);
 
 while($row_price=mysqli_fetch_array($run_price)){
 
@@ -125,7 +125,7 @@ $total += $sub_total;
 
 }
 
-echo "$" . $total;
+echo "Rs." . $total;
 
 
 
