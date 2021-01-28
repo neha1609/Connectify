@@ -118,7 +118,7 @@ include("functions/functions.php");
                               $ip_add = $_GET['id'];
                               $get_products = "Select * from cart where ip_add='$ip_add'";
 
-                              $run_products = mysqli_query($con,$get_products);
+                              if($run_products = $con->query($get_products)){
                               //echo $run_products;
                               while ($row_product = $run_products->fetch_assoc()) {
                                   $pro_id=$row_product['p_id'];
@@ -150,6 +150,7 @@ include("functions/functions.php");
                                 <?php
                               }
                               }
+                            }
                             }
                                 ?>
                                 <!--<tr>
@@ -190,7 +191,8 @@ include("functions/functions.php");
                 <div colspan="4" class="text-right"><strong>Total : </strong> <?php total_price(); ?></div>
                 <br>
                 <a href="index.php" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Continue Shopping</a>
-                <a href="razorpay/pay.php" class="btn btn-primary pull-right">Next<span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <a href="checkout.php?payment_options" class="btn btn-primary pull-right">Checkout<span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
     </div>

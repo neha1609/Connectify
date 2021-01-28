@@ -2,15 +2,15 @@
 
 <?php
 
-$session_email = $_SESSION['customer_email'];
+$session_row = $_SESSION['customers'];
 
-$select_customer = "select * from customers where customer_email='$session_email'";
+//$select_customer = "select * from customers where customer_email='$session_email'";
 
-$run_customer = mysqli_query($con,$select_customer);
+//$run_customer = mysqli_query($con,$select_customer);
 
-$row_customer = mysqli_fetch_array($run_customer);
+//$row_customer = mysqli_fetch_array($run_customer);
 
-$customer_id = $row_customer['customer_id'];
+$customer_id = $session_row['customer_id'];
 
 
 ?>
@@ -22,16 +22,16 @@ $customer_id = $row_customer['customer_id'];
 <a href="order.php?c_id=<?php echo $customer_id; ?>">Pay Off line</a>
 
 </p>
-
 <center><!-- center Starts -->
+<p>OR</p>
 
 <p class="lead">
 
-<a href="#">
+<a href="razorpay/pay.php">
 
-Pay Online With Pay pal
+Pay Online With Razor Pay
 
-<img src="images/paypal.png" width="500" height="270" class="img-responsive">
+<img src="image/Razor_pay.png" width="500" height="270" class="img-responsive">
 
 </a>
 

@@ -124,7 +124,7 @@ $total += $sub_total;
 
 
 }
-
+$_SESSION['total']=$total;
 echo "Rs." . $total;
 
 

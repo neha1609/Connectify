@@ -125,7 +125,7 @@ $run_customer = mysqli_query($con,$get_customer);
 
 $row_customer = mysqli_fetch_array($run_customer);
 
-$customer_email = $row_customer['customer_email'];
+$customer_email = $row_customer['email'];
 
 echo $customer_email;
 
@@ -163,7 +163,7 @@ echo $order_date;
 <td>
 <?php
 
-if($order_status=='pending'){
+if($order_status=='0'){
 
 echo $order_status='pending';
 
