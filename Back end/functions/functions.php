@@ -21,7 +21,9 @@ function add_cart(){
 global $con;
 
 if(isset($_GET['add_cart'])){
-
+	$cust=$_SESSION['customers'];
+	$c_id=$cust['customer_id'];
+echo $c_id;
 $ip_add = getRealUserIp();
 
 $p_id = $_GET['add_cart'];
@@ -40,16 +42,20 @@ if(mysqli_num_rows($run_check)>0){
 
 echo "<script>alert('This Product is already added in cart $ip_add')</script>";
 
-echo "<script>window.open('cart2.php?id=$ip_add','_self')</script>";
+//echo "<script>window.open('cart2.php?id=$ip_add','_self')</script>";
+echo "<script>window.open('cart2.php?id=$c_id','_self')</script>";
+//echo "<script>window.open('index.php','_self')</script>";
 
 }
 else {
 
-$query = "insert into cart (p_id,ip_add,qty) values ('$p_id','$ip_add','$product_qty')";
+$query = "insert into cart (p_id,ip_add,qty,c_id) values ('$p_id','$ip_add','$product_qty',$c_id)";
+	//$query = "insert into cart (p_id,ip_add,qty) values ('$p_id','$ip_add','$product_qty')";
 
 $run_query = mysqli_query($con,$query);
 //echo $ip_add;
-echo "<script>window.open('cart2.php?id=$ip_add','_self')</script>";
+//echo "<script>window.open('cart2.php?id=$ip_add','_self')</script>";
+echo "<script>window.open('cart2.php?id=$c_id','_self')</script>";
 
 }
 

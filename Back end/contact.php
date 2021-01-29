@@ -11,7 +11,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Overpass:wght@900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;800&family=Ubuntu&display=swap" rel="stylesheet">
-
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Contact</title>
 </head>
 
@@ -87,7 +88,7 @@
           </div>
         </form>
           <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-            <a class="text-indigo-500">hemangee4700@gmail.com</a>
+            <a class="text-indigo-500">dpkr5365@gmail.com</a>
             <p class="leading-normal my-5">Salt Lake
               <br>Kolkata, 700102
             </p>

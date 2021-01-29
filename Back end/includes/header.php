@@ -40,11 +40,11 @@
                          
 			 ?>
 		<?php
-$ip_add=getRealUserIp();
+//$ip_add=getRealUserIp();
   ?>
 
 			<a class="mr-5 hover:text-gray-900" href="index.php" style="color: blue;"><?php  echo "$c_name";?> </a>
-			 <a class="mr-5 hover:text-gray-900" href="cart2.php?id=<?php echo $ip_add;?>">Cart</a>
+			 <a class="mr-5 hover:text-gray-900" href="cart2.php?id=<?php echo $c_id;?>">Cart</a>
 
 
 			   <a class="mr-5 hover:text-gray-900" href="logout.php">Logout</a>

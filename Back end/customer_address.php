@@ -59,7 +59,15 @@
 			</h3><!-- panel-title Ends -->
 
 		</div><!-- panel-heading Ends -->
-
+		<?php
+		if(isset($_GET['id'])){
+			$id = $_GET['id'];
+			$cust = "select * from customers where customer_id='$id'";
+			$run_cust = mysqli_query($con,$cust);
+			if($row=mysqli_fetch_array($run_cust)){
+				$addres=$row['address'];}
+		}
+		?>
 		<div class="panel-body"><!-- panel-body Starts -->
 
 			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data"><!-- form-horizontal Starts -->
@@ -70,7 +78,7 @@
 
 					<div class="col-md-6">
 
-						<input type="text" name="address" class="form-control">
+						<input type="text" name="address" class="form-control" value="<?php echo $addres; ?>">
 
 					</div>
 
@@ -94,7 +102,7 @@
 
 				<div class="col-md-6">
 
-					<input type="submit" name="submit" value="Add Customer" class="btn btn-primary form-control">
+					<input type="submit" name="submit" value="Add Customer Address" class="btn btn-primary form-control">
 
 				</div>
 
@@ -111,27 +119,32 @@
 </body>
 </html>
 	<?php
-
+	if(isset($_GET['id'])){
 	if(isset($_POST['submit'])){
 
 		$address = $_POST['address'];
 
 		$pincode = $_POST['pincode'];
 		$id = $_GET['id'];
+		$addr=$address . ",". $pincode;
 
-		$insert_cust = "insert into customers (name,city,image,country,email,contact,password) values ('$name','$city','$image1','$country','$email','$contact','$password')";
+		$insert_cust = "update customers set address='$addr' where customer_id='$id'";
 
 		$run_cust = mysqli_query($con,$insert_cust);
 
 		if($run_cust){
 
-			echo "<script> alert('New Category Has Been Inserted')</script>";
+			echo "<script> alert('Customer Address Has Been Inserted')</script>";
 
-			echo "<script> window.open('index.php?view_customers','_self') </script>";
+			echo "<script> window.open('checkout.php?payment_options','_self') </script>";
 
+		}
+		else{
+			echo "<script> alert('Error Occured')</script>";
 		}
 
 	}
+}
 
 
 

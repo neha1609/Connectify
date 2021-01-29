@@ -115,9 +115,9 @@ include("functions/functions.php");
                               //echo $ip_add;
                               if(isset($_GET['id'])){
 
-                              $ip_add = $_GET['id'];
-                              $get_products = "Select * from cart where ip_add='$ip_add'";
-
+                              $c_id = $_GET['id'];
+                              //$get_products = "Select * from cart where ip_add='$c_id'";
+                              $get_products = "Select * from cart where c_id='$c_id'";
                               if($run_products = $con->query($get_products)){
                               //echo $run_products;
                               while ($row_product = $run_products->fetch_assoc()) {
@@ -181,7 +181,8 @@ include("functions/functions.php");
                                     <td colspan="4" class="text-right"><strong>Total</strong></td>
                                     <td>$88.00</td>
                                 </tr>-->
-
+<?php //$a=$_SESSION['customers'];
+//echo $a['customer_id'];?>
                             </tbody>
                         </table>
                     </div>
@@ -191,8 +192,8 @@ include("functions/functions.php");
                 <div colspan="4" class="text-right"><strong>Total : </strong> <?php total_price(); ?></div>
                 <br>
                 <a href="index.php" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Continue Shopping</a>
-
-                <a href="checkout.php?payment_options" class="btn btn-primary pull-right">Checkout<span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a href="customer_address.php?id=<?php echo $c_id;?>" class="btn btn-primary pull-right">Checkout<span class="glyphicon glyphicon-chevron-right"></span></a>
+                <!--<a href="checkout.php?payment_options" class="btn btn-primary pull-right">Checkout<span class="glyphicon glyphicon-chevron-right"></span></a>-->
             </div>
         </div>
     </div>

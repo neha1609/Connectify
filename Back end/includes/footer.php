@@ -1,4 +1,4 @@
-<section class="section3">
+<section>
 
 <footer class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
@@ -15,6 +15,26 @@
           <li>
             <a href="Study Material.php"> Study Material </a>
           </li>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">ORDER US</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <div style="color:;"><i class="fa fa-whatsapp" style="font-size:20px;"></i> 9262259386</div>
+          </li>
+          <li>
+            <div style="color:;"><i class="fas fa-sms" style="font-size:20px;"></i> 9262259386</div>
+          </li>
+          <li>
+            <div style="color:;"><i class="fa fa-whatsapp" style="font-size:20px;"></i> 9262259386</div>
+          </li>
+          <li>
+            <div style="color:;"><i class="fa fa-envelope" style="font-size:20px;"></i> dpkr5365@gmail.com</div>
+          </li>
+          <!--<li>
+            <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+          </li>-->
         </nav>
       </div>
       
