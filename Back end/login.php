@@ -17,7 +17,8 @@
         {
           //echo "Welcome ".$row['name'];exit;
           $_SESSION['customers']=$row;
-          header("Location:index.php");
+          //header("Location:../index.php");
+          echo "<script>window.open('index.php','_self')</script>";
         }
         else
         {
@@ -92,6 +93,8 @@
         <br>
         <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="submit" name="submit">Login
         </button>
+        <a href="change_pass.php">Forgotten Password</a>
+        <div>New User? <a href="signup.php">Sign Up</a></div>
         </div>
       </form>
     </div>
