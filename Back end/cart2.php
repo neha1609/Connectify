@@ -192,8 +192,20 @@ include("functions/functions.php");
                 <div colspan="4" class="text-right"><strong>Total : </strong> <?php total_price(); ?></div>
                 <br>
                 <a href="index.php" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Continue Shopping</a>
-                <a href="customer_address.php?id=<?php echo $c_id;?>" class="btn btn-primary pull-right">Checkout<span class="glyphicon glyphicon-chevron-right"></span></a>
-                <!--<a href="checkout.php?payment_options" class="btn btn-primary pull-right">Checkout<span class="glyphicon glyphicon-chevron-right"></span></a>-->
+                <?php
+                    if(isset($_SESSION['customers'])) {
+                ?>
+                  <a href="customer_address.php?id=<?php echo $c_id;?>" class="btn btn-primary pull-right">Checkout<span class="glyphicon glyphicon-chevron-right"></span></a>
+                <?php
+                  }
+                  else
+                  {
+                ?>
+                  <a href="login.php" class="btn btn-primary pull-right">Checkout<span class="glyphicon glyphicon-chevron-right"></span></a>
+                <?php
+                  }
+                ?>
+                  <!--<a href="checkout.php?payment_options" class="btn btn-primary pull-right">Checkout<span class="glyphicon glyphicon-chevron-right"></span></a>-->
             </div>
         </div>
     </div>

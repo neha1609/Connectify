@@ -71,11 +71,37 @@ session_start();
                 <a class="block relative h-48 rounded overflow-hidden" href="product.php?id=<?php echo $pro_id; ?>">
                   <img alt="ecommerce" class="object-cover object-center w-40 h-70 block" src="image/<?php echo $image; ?>">
                 </a>
+
                 <div class="mt-4">
                   <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">STUDY MATERIAL</h3>
                   <h2 class="text-gray-900 title-font text-lg font-medium"><?php echo $product_title; ?></h2>
                   <p class="mt-1">Rs. <?php echo $product_price; ?></p>
+                  <?php
+                    if(isset($_SESSION['customers'])) {
+                  ?>
+                  <div>
+                    <ol class="flex flex-wrap md:text-left text-center order-first">
+                      <li> 
+                        <a href="R.S Aggarwal Quantitative Aptitude.pdf" download> 
+                          <div >
+                            <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Download</button>
+
+                          </div>
+                        </a>
+                      </li>
+                      <!-- Added below li tag to provide space-->
+                      <li><p style="width=2 px; color: white;">  h   </p></li>
+                      <li>
+                        <a class="block relative h-48 rounded overflow-hidden" href="product.php?id=<?php echo $pro_id; ?>">
+                          <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Hard Copy</button>
+                        </a>
+                      </li>
+                    </ol>
+                  </div>
+
+                  <?php }?>
                 </div>
+
               </div>
               <?php
 

@@ -65,6 +65,7 @@ include("includes/header.php");
 <th>Vendor Phone Number:</th>
 <th>Vendor Delete:</th>
 <th>Vendor Edit:</th>
+<th>Vendor Contact:</th>
 
 
 </tr>
@@ -136,6 +137,16 @@ $i++;
 <a href="index.php?vendor_edit=<?php echo $c_id; ?>" >
 
 <i class="fa fa-trash-o" ></i> Edit
+
+</a>
+
+
+</td>
+<td>
+
+<a href="contact.php?id=<?php echo $c_id; ?>" >
+
+<i class="fa fa-trash-o" ></i> Mail
 
 </a>
 
