@@ -18,15 +18,15 @@ def clean(text):
     return "".join(c if c.isalnum() else "_" for c in text)
 
 
-filename = "Email_data.xlsx"
-if os.path.isfile(filename)==False:
+filenames = "Email_data.xlsx"
+if os.path.isfile(filenames)==False:
     wb = Workbook()
     sheet=wb.worksheets[0]
     sheet.cell(row=1,column=1).value="EMAIL"
     sheet.cell(row=1,column=2).value="PRODUCT"
     
-    wb.save(filename = filename)
-wb=load_workbook(filename)
+    wb.save(filename = filenames)
+wb=load_workbook(filenames)
 sheet=wb.worksheets[0]
 maxr=sheet.max_row
 
@@ -45,7 +45,7 @@ print(messages)
 for i in range(messages, messages-N, -1):
     # fetch the email message by ID
     res, msg = imap.fetch(str(i), "(RFC822)")
-    print(msg)
+    #print(msg)
     for response in msg:
 
         if isinstance(response, tuple):
@@ -63,9 +63,10 @@ for i in range(messages, messages-N, -1):
                 From = From.decode(encoding)
             #print("Subject:", subject)
             print("From:", From)
-            maxr=sheet.max_row
+            maxr=maxr+1
             print(maxr)
-            sheet.cell(row=maxr+1,column=1).value=str(From)
+            sheet.cell(row=maxr,column=1).value=str(From)
+            wb.save(filename = filenames)
             # if the email message is multipart
             if msg.is_multipart():
                 # iterate over email parts
@@ -95,8 +96,8 @@ for i in range(messages, messages-N, -1):
                         try:
                             #file1.writelines(body) 
                             body=body.splitlines()
-                            sheet.cell(row=maxr+1,column=2).value=body[0]
-                            wb.save(filename = filename)
+                            sheet.cell(row=maxr,column=2).value=body[0]
+                            wb.save(filename = filenames)
                         except:
                             pass
                         #file1.close()
@@ -127,8 +128,8 @@ for i in range(messages, messages-N, -1):
                     file1.close()'''
                     body=body.splitlines()
                     #maxr=sheet.max_row
-                    sheet.cell(row=maxr+1,column=2).value=body[0]
-                    wb.save(filename = filename)
+                    sheet.cell(row=maxr,column=2).value=body[0]
+                    wb.save(filename = filenames)
                     
             if content_type == "text/html":
                 # if it's HTML, create a new HTML file and open it in browser
