@@ -59,35 +59,35 @@
 
       <div class="pricing-plan">
         <img src="image/book1.jpg" alt="" class="pricing-img">
-        <h2 class="pricing-header">Personal</h2>
+        <h2 class="pricing-header"></h2>
         <ul class="pricing-features">
           <li class="pricing-features-item">Custom domains</li>
           <li class="pricing-features-item">Sleeps after 30 mins of inactivity</li>
         </ul>
-        <span class="pricing-price">Free</span>
-        <a href="#/" class="pricing-button">Sign up</a>
+        <span class="pricing-price">Rs. 200</span>
+        
       </div>
 
       <div class="pricing-plan">
-        <img src="image/book1.jpg" alt="" class="pricing-img">
-        <h2 class="pricing-header">Small team</h2>
+        <img src="image/pic1.jpg" alt="" class="pricing-img">
+        <h2 class="pricing-header"></h2>
         <ul class="pricing-features">
           <li class="pricing-features-item">Never sleeps</li>
           <li class="pricing-features-item">Multiple workers for more powerful apps</li>
         </ul>
-        <span class="pricing-price">$150</span>
-        <a href="#/" class="pricing-button is-featured">Free trial</a>
+        <span class="pricing-price">Rs. 150</span>
+        
       </div>
 
       <div class="pricing-plan">
-      <img src="image/book1.jpg" alt="" class="pricing-img">
-        <h2 class="pricing-header">Enterprise</h2>
+      <img src="image/clrs.jpg" alt="" class="pricing-img">
+        <h2 class="pricing-header"></h2>
         <ul class="pricing-features">
           <li class="pricing-features-item">Dedicated</li>
           <li class="pricing-features-item">Simple horizontal scalability</li>
         </ul>
-        <span class="pricing-price">$400</span>
-        <a href="#/" class="pricing-button">Free trial</a>
+        <span class="pricing-price">Rs. 400</span>
+        
       </div>
 
     </div>

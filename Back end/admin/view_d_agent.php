@@ -65,6 +65,7 @@ include("includes/header.php");
 <th>Delivery Agent Phone Number:</th>
 <th>Delivery Agent Delete:</th>
 <th>Delivery Agent Edit:</th>
+<th>Delivery Agent Contact:</th>
 
 
 </tr>
@@ -141,7 +142,13 @@ $i++;
 
 
 </td>
+<td>
+<a href="contact_d_agent.php?id=<?php echo $c_id; ?>" >
 
+<i class="fa fa-trash-o" ></i> Mail
+
+</a>
+</td>
 
 </tr>
 

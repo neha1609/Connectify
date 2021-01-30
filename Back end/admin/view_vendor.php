@@ -144,7 +144,7 @@ $i++;
 </td>
 <td>
 
-<a href="contact.php?id=<?php echo $c_id; ?>" >
+<a href="contact_vendor.php?id=<?php echo $c_id; ?>" >
 
 <i class="fa fa-trash-o" ></i> Mail
 

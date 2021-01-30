@@ -1,5 +1,6 @@
 {
     "require": {
-        "phpmailer/phpmailer": "^6.2"
+        "phpmailer/phpmailer": "^6.2",
+        "shuchkin/simplexlsx": "^0.8.21"
     }
 }
