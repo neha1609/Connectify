@@ -1,5 +1,6 @@
 <?php
   include("includes/dbcon.php");
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
