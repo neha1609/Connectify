@@ -429,8 +429,10 @@ else {
 </div><!-- panel panel-red Ends -->
 
 </div><!-- col-lg-3 col-md-6 Ends -->
-<div>
-	<a href="../Recieve_mail/mail_recieved.php" class="btn btn-primary pull-right">Place order</a>
+<div class="col-lg-3 col-md-6">
+	<span class="pull-left">
+	<a href="../Recieve_mail/mail_recieved.php" class="btn btn-primary pull-right">Gmail order</a>
+</span>
 </div>
 <!--<div>
 	<a href="C:/Users/user/Downloads/fetchingEmail.py" class="btn btn-primary pull-right">Load orders from mail</a>
