@@ -131,18 +131,6 @@ for i in range(messages, messages-N, -1):
                     sheet.cell(row=maxr,column=2).value=body[0]
                     wb.save(filename = filenames)
                     
-            if content_type == "text/html":
-                # if it's HTML, create a new HTML file and open it in browser
-                folder_name = clean(subject)
-                if not os.path.isdir(folder_name):
-                    # make a folder for this email (named after the subject)
-                    os.mkdir(folder_name)
-                filename = "index.html"
-                filepath = os.path.join(folder_name, filename)
-                # write the file
-                open(filepath, "w", encoding='utf-8').write(body)
-                # open in the default browser
-                webbrowser.open(filepath)
             print("="*100)
         #wb.save(filename = filename)
 # close the connection and logout
