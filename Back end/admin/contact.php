@@ -1,4 +1,4 @@
-<!--Contact form for delivery agent-->
+<!--Contact form-->
 <?php
   include("includes/dbcon.php");
   session_start();
