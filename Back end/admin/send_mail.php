@@ -1,3 +1,4 @@
+<!--Sending mail to vendor from admin portal-->
 <?php
 include("includes/dbcon.php");
 use PHPMailer\PHPMailer\PHPMailer;
@@ -15,7 +16,7 @@ if(isset($_POST['submit'] )) {
 			$email = $row['email'];
 			$name = $row['name'];
 		    $message = $_POST['message'];
-		    $from      = 'dpkr5365@gmail.com';
+		    $from      = <sender_mail>;
 		    $subject = 'Admin contact with vendor trial. :)';
 		    //$headers = 'From: '.$email . "\r\n" .
 		        //"CC: nehajhawar1609@gmail.com";
@@ -29,14 +30,14 @@ if(isset($_POST['submit'] )) {
 			$mail->SMTPSecure = "tls";
 			$mail->Port       = 587;
 			$mail->Host       = "smtp.gmail.com";
-			$mail->Username   = "dpkr5365@gmail.com";
-			$mail->Password   = "Helloworld#123";
+			$mail->Username   = <Admin_Gmail_ID>;
+			$mail->Password   = <Gmail_Password>;
 
 			$mail->IsHTML(true);
 			//$mail->AddAddress("hemangee4700@gmail.com", "Hemangee De");
 			//$mail->SetFrom("dpkr5365@gmail.com", "Deepak Kumar");
 			$mail->AddAddress($email, $name);
-			$mail->SetFrom($from, "Deepak Kumar");
+			$mail->SetFrom($from, <Admin_Name/Company_Name>);
 			//$mail->AddReplyTo("reply-to-email@domain", "reply-to-name");
 			//$mail->AddCC("cc-recipient-email@domain", "cc-recipient-name");
 			$mail->Subject = $subject;
