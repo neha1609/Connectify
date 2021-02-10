@@ -1,18 +1,13 @@
+<!--Viewing User-->
+
 <?php
-
-
-
 if(!isset($_SESSION['admin_email'])){
-
 echo "<script>window.open('login.php','_self')</script>";
-
 }
 
 else {
-
 	include("includes/dbcon.php");
 	include("includes/header.php");
-
 ?>
 
 <div class="row" ><!-- 1 row Starts -->
