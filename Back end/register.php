@@ -1,36 +1,8 @@
+<!-- Registering user after filling signup form-->
 <?php
 
 	include("includes/dbcon.php");
-	/*if(isset($_POST['submit']))
-	{*/
-		/*echo "<pre>";
-		print_r($_POST);echo "</pre>";*/
-		/*$pic=$_FILES['pic']['name'];
-		$temp=$_FILES['pic']['tmp_name'];
-		move_uploaded_file($temp, "image/$pic");*/
-		/*$name=$_POST['name'];
-		$pic=$_FILES['pic']['name'];
-		$temp=$_FILES['pic']['tmp_name'];
-		move_uploaded_file($temp, "image/$pic");
-		$city=$_POST['city'];
-		$email=$_POST['email'];
-		$password=md5($_POST['password']);
-		$country=$_POST['country'];
-		$contact=$_POST['contact'];
-		echo $email;
-
-HEAD
-		
-
-		//echo $password;
-		$sql="insert into customers(profile_image,name,email,password, city, country, contact) VALUES('$pic', '$name','$email','$password', '$city', '$country', '$contact')";
-		//echo $sql;
-de1e306ad0417e31ab15ff5341658b8049418719
-		if($con->query($sql))
-			echo "Signup done!";
-		else 
-			echo "pls try again";
-	}*/
+	
 	if(isset($_POST['submit'])){
 
 		$name = $_POST['name'];
