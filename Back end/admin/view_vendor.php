@@ -1,3 +1,4 @@
+<!--Viewing Vendors-->
 <?php
 
 if(!isset($_SESSION['admin_email'])){
