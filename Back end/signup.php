@@ -1,3 +1,5 @@
+<!-- Sign Up Form -->
+
 <?php
 session_start();
   include("includes/dbcon.php");
