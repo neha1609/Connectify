@@ -1,9 +1,10 @@
+<!--Connecting to database-->
 <?php
 
-$host="localhost";
-$user="root";
-$password="";
-$database="connectify";
+$host=<Host_name>;
+$user=<Username>;
+$password=<Password>;
+$database=<Database_Name>;
 
 $con= new mysqli($host,$user,$password,$database);
 
