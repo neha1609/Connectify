@@ -1,3 +1,5 @@
+<!-- Sending mail to Delivery Agent-->
+
 <?php
 include("includes/dbcon.php");
 use PHPMailer\PHPMailer\PHPMailer;
@@ -15,7 +17,7 @@ if(isset($_POST['submit'] )) {
 			$email = $row['email'];
 			$name = $row['name'];
 		    $message = $_POST['message'];
-		    $from      = <Your_Gmail_ID>;
+		    $from      = <Admin_Gmail_ID>;
 		    $subject = 'Admin contact with delivery agent trial. :)';
 
 			$mail = new PHPMailer();
@@ -27,8 +29,8 @@ if(isset($_POST['submit'] )) {
 			$mail->SMTPSecure = "tls";
 			$mail->Port       = 587;
 			$mail->Host       = "smtp.gmail.com";
-			$mail->Username   = <Your_Gmail_ID>;
-			$mail->Password   = <Your_Gmail_Password>;
+			$mail->Username   = <Admin_Gmail_ID>;
+			$mail->Password   = <Admin_Gmail_Password>;
 
 			$mail->IsHTML(true);
 			
