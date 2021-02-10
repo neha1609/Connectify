@@ -1,3 +1,5 @@
+<!--Index Page-->
+
 <?php
   session_start();
   include("includes/dbcon.php");
@@ -26,21 +28,7 @@
   ?>
   
 <!-- a new section here  -->
-<section>
-  <!--<header>
-  <div>
-    
 
-<li>
-  <?php
-  
- //$ip_add=getRealUserIp();
-  ?>
-<a href="cart2.php?id=<?php //echo $ip_add;?>"> Shopping Cart </a>
-</li>
-  </div>
-</header>-->
-</section>
      <section class="section1">
        <div style="background-image: url('image/pic2.jpg');
      background-size:width:100%; background-repeat: no-repeat; height:100vh; padding-top:80px; margin-left:0; margin-right:0; background-position:center ">
@@ -122,12 +110,6 @@
 <?php
   include("includes/footer.php");
 ?>
-    <!--<section class="section3">
-
-
-
-
-
 
   <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
