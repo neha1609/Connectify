@@ -1,3 +1,4 @@
+<!--To edit existing customers-->
 <?php
 
 if(!isset($_SESSION['admin_email'])){
@@ -33,34 +34,12 @@ $email = $row_edit['email'];
 
 $image = $row_edit['image'];
 
-/*$p_image2 = $row_edit['product_img2'];
-
-$p_image3 = $row_edit['product_img3'];*/
-
 $country = $row_edit['country'];
 
 $contact = $row_edit['contact'];
 
 
 }
-/*
-
-$get_p_cat = "select * from product_categories where p_cat_id='$p_cat'";
-
-$run_p_cat = mysqli_query($con,$get_p_cat);
-
-$row_p_cat = mysqli_fetch_array($run_p_cat);
-
-$p_cat_title = $row_p_cat['p_cat_title'];
-
-$get_cat = "select * from categories where cat_id='$cat'";
-
-$run_cat = mysqli_query($con,$get_cat);
-
-$row_cat = mysqli_fetch_array($run_cat);
-
-$cat_title = $row_cat['cat_title'];*/
-
 ?>
 
 
@@ -142,28 +121,6 @@ $cat_title = $row_cat['cat_title'];*/
 
 <option value="<?php //echo $city; ?>" > <?php//echo $city; ?> </option>-->
 
-
-<?php
-
-/*$get_p_cats = "select * from product_categories";
-
-$run_p_cats = mysqli_query($con,$get_p_cats);
-
-while ($row_p_cats=mysqli_fetch_array($run_p_cats)) {
-
-$p_cat_id = $row_p_cats['p_cat_id'];
-
-$p_cat_title = $row_p_cats['p_cat_title'];
-
-echo "<option value='$p_cat_id' >$p_cat_title</option>";
-
-}*/
-
-
-?>
-
-
-
 </div>
 
 </div><!-- form-group Ends -->
@@ -179,24 +136,6 @@ echo "<option value='$p_cat_id' >$p_cat_title</option>";
 <!--<select name="cat" class="form-control" >
 
 <option value="<?php //echo $cat; ?>" > <?php //echo $cat_title; ?> </option>-->
-
-<?php
-
-/*$get_cat = "select * from categories ";
-
-$run_cat = mysqli_query($con,$get_cat);
-
-while ($row_cat=mysqli_fetch_array($run_cat)) {
-
-$cat_id = $row_cat['cat_id'];
-
-$cat_title = $row_cat['cat_title'];
-
-echo "<option value='$cat_id'>$cat_title</option>";
-
-}*/
-
-?>
 
 </div>
 
