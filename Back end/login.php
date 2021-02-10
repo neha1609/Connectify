@@ -1,3 +1,5 @@
+<!--Login Page-->
+
 <?php
   include("includes/dbcon.php");
 ?>
@@ -75,7 +77,7 @@
     include("includes/header.php");
   ?>
 
-  <!-- Signup -->
+  <!-- Login -->
   <section class="section1">
     <div style="background-image: url('image/pic2.jpg');
      background-size:width:100%; background-repeat: no-repeat; height:100vh; padding-top:80px; margin-left:0; margin-right:0; background-position:center; /*opacity: 0.5; */align-content: center;" >
