@@ -1,3 +1,4 @@
+<!--Stores the order from user's email and reflect it in admin portal-->
 <?php
 include("../includes/dbcon.php");
 require_once("vendor/autoload.php"); 
