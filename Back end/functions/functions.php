@@ -1,8 +1,6 @@
 <?php
 
-//$db = mysqli_connect("localhost","root","","connectify");
-$con= new mysqli("localhost","root","","connectify");
-//include("../includes/dbcon.php");
+$con= new mysqli(<host_name>,<username>,<password>,<database_name>);
 
 /// IP address code starts /////
 function getRealUserIp(){
@@ -18,48 +16,48 @@ function getRealUserIp(){
 /// add_cart function Starts /////
 
 function add_cart(){
-global $con;
+	global $con;
 
-if(isset($_GET['add_cart'])){
-	$cust=$_SESSION['customers'];
-	$c_id=$cust['customer_id'];
-echo $c_id;
-$ip_add = getRealUserIp();
+	if(isset($_GET['add_cart'])){
+		$cust=$_SESSION['customers'];
+		$c_id=$cust['customer_id'];
+		echo $c_id;
+		$ip_add = getRealUserIp();
 
-$p_id = $_GET['add_cart'];
-//echo "<script>alert('Recieved p id')</script>";
+		$p_id = $_GET['add_cart'];
+		//echo "<script>alert('Recieved p id')</script>";
 
-$product_qty =1; //$_POST['product_qty'];
+		$product_qty =1; //$_POST['product_qty'];
 
-//$product_size = $_POST['product_size'];
+		//$product_size = $_POST['product_size'];
 
 
-$check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id'";
+		$check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id'";
 
-$run_check = mysqli_query($con,$check_product);
+		$run_check = mysqli_query($con,$check_product);
 
-if(mysqli_num_rows($run_check)>0){
+		if(mysqli_num_rows($run_check)>0){
 
-echo "<script>alert('This Product is already added in cart $ip_add')</script>";
+			echo "<script>alert('This Product is already added in cart $ip_add')</script>";
 
-//echo "<script>window.open('cart2.php?id=$ip_add','_self')</script>";
-echo "<script>window.open('cart2.php?id=$c_id','_self')</script>";
-//echo "<script>window.open('index.php','_self')</script>";
+			//echo "<script>window.open('cart2.php?id=$ip_add','_self')</script>";
+			echo "<script>window.open('cart2.php?id=$c_id','_self')</script>";
+			//echo "<script>window.open('index.php','_self')</script>";
 
-}
-else {
+		}
+		else {
 
-$query = "insert into cart (p_id,ip_add,qty,c_id) values ('$p_id','$ip_add','$product_qty',$c_id)";
-	//$query = "insert into cart (p_id,ip_add,qty) values ('$p_id','$ip_add','$product_qty')";
+			$query = "insert into cart (p_id,ip_add,qty,c_id) values ('$p_id','$ip_add','$product_qty',$c_id)";
+				//$query = "insert into cart (p_id,ip_add,qty) values ('$p_id','$ip_add','$product_qty')";
 
-$run_query = mysqli_query($con,$query);
-//echo $ip_add;
-//echo "<script>window.open('cart2.php?id=$ip_add','_self')</script>";
-echo "<script>window.open('cart2.php?id=$c_id','_self')</script>";
+			$run_query = mysqli_query($con,$query);
+			//echo $ip_add;
+			//echo "<script>window.open('cart2.php?id=$ip_add','_self')</script>";
+			echo "<script>window.open('cart2.php?id=$c_id','_self')</script>";
 
-}
+		}
 
-}
+	}
 
 
 
@@ -73,17 +71,17 @@ echo "<script>window.open('cart2.php?id=$c_id','_self')</script>";
 
 function items(){
 
-global $con;
+	global $con;
 
-$ip_add = getRealUserIp();
+	$ip_add = getRealUserIp();
 
-$get_items = "select * from cart where ip_add='$ip_add'";
+	$get_items = "select * from cart where ip_add='$ip_add'";
 
-$run_items = mysqli_query($con,$get_items);
+	$run_items = mysqli_query($con,$get_items);
 
-$count_items = mysqli_num_rows($run_items);
+	$count_items = mysqli_num_rows($run_items);
 
-echo $count_items;
+	echo $count_items;
 
 }
 
@@ -94,46 +92,37 @@ echo $count_items;
 
 function total_price(){
 
-global $con;
+	global $con;
 
-$ip_add = getRealUserIp();
+	$ip_add = getRealUserIp();
 
-$total = 0;
+	$total = 0;
 
-$select_cart = "select * from cart where ip_add='$ip_add'";
+	$select_cart = "select * from cart where ip_add='$ip_add'";
 
-$run_cart = mysqli_query($con,$select_cart);
+	$run_cart = mysqli_query($con,$select_cart);
 
-while($record=mysqli_fetch_array($run_cart)){
+	while($record=mysqli_fetch_array($run_cart)){
 
-$pro_id = $record['p_id'];
+		$pro_id = $record['p_id'];
 
-$pro_qty = $record['qty'];
+		$pro_qty = $record['qty'];
 
-$get_price = "select * from products where product_id='$pro_id'";
+		$get_price = "select * from products where product_id='$pro_id'";
 
-$run_price = mysqli_query($con,$get_price);
+		$run_price = mysqli_query($con,$get_price);
 
-while($row_price=mysqli_fetch_array($run_price)){
+		while($row_price=mysqli_fetch_array($run_price)){
 
+			$sub_total = $row_price['product_price']*$pro_qty;
 
-$sub_total = $row_price['product_price']*$pro_qty;
+			$total += $sub_total;
 
-$total += $sub_total;
+		}
 
-
-
-}
-
-
-
-
-
-}
-$_SESSION['total']=$total;
-echo "Rs." . $total;
-
-
+	}
+	$_SESSION['total']=$total;
+	echo "Rs." . $total;
 
 }
 
@@ -144,84 +133,84 @@ echo "Rs." . $total;
 
 function getPro(){
 
-global $db;
+	global $db;
 
-$get_products = "select * from products order by 1 DESC LIMIT 0,8";
+	$get_products = "select * from products order by 1 DESC LIMIT 0,8";
 
-$run_products = mysqli_query($db,$get_products);
+	$run_products = mysqli_query($db,$get_products);
 
-while($row_products=mysqli_fetch_array($run_products)){
+	while($row_products=mysqli_fetch_array($run_products)){
 
-$pro_id = $row_products['product_id'];
+		$pro_id = $row_products['product_id'];
 
-$pro_title = $row_products['product_title'];
+		$pro_title = $row_products['product_title'];
 
-$pro_price = $row_products['product_price'];
+		$pro_price = $row_products['product_price'];
 
-$pro_img1 = $row_products['product_img1'];
+		$pro_img1 = $row_products['product_img1'];
 
-echo "
+		echo "
 
-<div class='col-md-4 col-sm-6 single' >
+		<div class='col-md-4 col-sm-6 single' >
 
-<div class='product' >
+			<div class='product' >
 
-<a href='details.php?pro_id=$pro_id' >
+				<a href='details.php?pro_id=$pro_id' >
 
-<img src='admin_area/product_images/$pro_img1' class='img-responsive' >
+				<img src='admin_area/product_images/$pro_img1' class='img-responsive' >
 
-</a>
+				</a>
 
-<div class='text' >
+				<div class='text' >
 
-<h3><a href='details.php?pro_id=$pro_id' >$pro_title</a></h3>
+					<h3><a href='details.php?pro_id=$pro_id' >$pro_title</a></h3>
 
-<p class='price' >$$pro_price</p>
+					<p class='price' >$$pro_price</p>
 
-<p class='buttons' >
+					<p class='buttons' >
 
-<a href='details.php?pro_id=$pro_id' class='btn btn-default' >View details</a>
+						<a href='details.php?pro_id=$pro_id' class='btn btn-default' >View details</a>
 
-<a href='details.php?pro_id=$pro_id' class='btn btn-primary'>
+						<a href='details.php?pro_id=$pro_id' class='btn btn-primary'>
 
-<i class='fa fa-shopping-cart'></i> Add to cart
+							<i class='fa fa-shopping-cart'></i> Add to cart
 
-</a>
-
-
-</p>
-
-</div>
+						</a>
 
 
-</div>
+					</p>
 
-</div>
+				</div>
 
-";
 
-}
+			</div>
+
+		</div>
+
+		";
+
+	}
 
 }
 
 /// getPCats function Starts ////
 function getPCats(){
 
-global $db;
+	global $db;
 
-$get_p_cats = "select * from product_categories";
+	$get_p_cats = "select * from product_categories";
 
-$run_p_cats = mysqli_query($db,$get_p_cats);
+	$run_p_cats = mysqli_query($db,$get_p_cats);
 
-while($row_p_cats = mysqli_fetch_array($run_p_cats)){
+	while($row_p_cats = mysqli_fetch_array($run_p_cats)){
 
-$p_cat_id = $row_p_cats['p_cat_id'];
+		$p_cat_id = $row_p_cats['p_cat_id'];
 
-$p_cat_title = $row_p_cats['p_cat_title'];
+		$p_cat_title = $row_p_cats['p_cat_title'];
 
-echo "<li><a href='shop.php?p_cat=$p_cat_id'> $p_cat_title </a></li>";
+		echo "<li><a href='shop.php?p_cat=$p_cat_id'> $p_cat_title </a></li>";
 
-}
+	}
 
 }
 /// getPCats function Ends ////
@@ -229,21 +218,21 @@ echo "<li><a href='shop.php?p_cat=$p_cat_id'> $p_cat_title </a></li>";
 /// getCats function Starts ////
 function getCats(){
 
-global $db;
+	global $db;
 
-$get_cats = "select * from categories";
+	$get_cats = "select * from categories";
 
-$run_cats = mysqli_query($db,$get_cats);
+	$run_cats = mysqli_query($db,$get_cats);
 
-while($row_cats = mysqli_fetch_array($run_cats)){
+	while($row_cats = mysqli_fetch_array($run_cats)){
 
-$cat_id = $row_cats['cat_id'];
+		$cat_id = $row_cats['cat_id'];
 
-$cat_title = $row_cats['cat_title'];
+		$cat_title = $row_cats['cat_title'];
 
-echo "<li><a href='shop.php?cat=$cat_id'>$cat_title</a></li>";
+		echo "<li><a href='shop.php?cat=$cat_id'>$cat_title</a></li>";
 
-}
+	}
 
 }
 /// getCats function Ends ////
@@ -252,108 +241,110 @@ echo "<li><a href='shop.php?cat=$cat_id'>$cat_title</a></li>";
 
 function getpcatpro(){
 
-global $db;
+	global $db;
 
-if(isset($_GET['p_cat'])){
+	if(isset($_GET['p_cat'])){
 
-$p_cat_id = $_GET['p_cat'];
+	$p_cat_id = $_GET['p_cat'];
 
-$get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
+	$get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
 
-$run_p_cat = mysqli_query($db,$get_p_cat);
+	$run_p_cat = mysqli_query($db,$get_p_cat);
 
-$row_p_cat = mysqli_fetch_array($run_p_cat);
+	$row_p_cat = mysqli_fetch_array($run_p_cat);
 
-$p_cat_title = $row_p_cat['p_cat_title'];
+	$p_cat_title = $row_p_cat['p_cat_title'];
 
-$p_cat_desc = $row_p_cat['p_cat_desc'];
+	$p_cat_desc = $row_p_cat['p_cat_desc'];
 
-$get_products = "select * from products where p_cat_id='$p_cat_id'";
+	$get_products = "select * from products where p_cat_id='$p_cat_id'";
 
-$run_products = mysqli_query($db,$get_products);
+	$run_products = mysqli_query($db,$get_products);
 
-$count = mysqli_num_rows($run_products);
+	$count = mysqli_num_rows($run_products);
 
-if($count==0){
+	if($count==0){
 
-echo "
+		echo "
 
-<div class='box'>
+		<div class='box'>
 
-<h1> No Product Found In This Product Category </h1>
+		<h1> No Product Found In This Product Category </h1>
 
-</div>
+		</div>
 
-";
+		";
 
-}else{
+	}
+	else
+	{
 
-echo "
+		echo "
 
-<div class='box'>
+		<div class='box'>
 
-<h1>$p_cat_title</h1>
+		<h1>$p_cat_title</h1>
 
-<p>$p_cat_desc</p>
+		<p>$p_cat_desc</p>
 
-</div>
+		</div>
 
-";
+		";
 
-}
+	}
 
-while($row_products = mysqli_fetch_array($run_products)){
+	while($row_products = mysqli_fetch_array($run_products)){
 
-$pro_id = $row_products['product_id'];
+		$pro_id = $row_products['product_id'];
 
-$pro_title = $row_products['product_title'];
+		$pro_title = $row_products['product_title'];
 
-$pro_price = $row_products['product_price'];
+		$pro_price = $row_products['product_price'];
 
-$pro_img1 = $row_products['product_img1'];
+		$pro_img1 = $row_products['product_img1'];
 
-echo "
+		echo "
 
-<div class='col-md-4 col-sm-6 center-responsive'>
+		<div class='col-md-4 col-sm-6 center-responsive'>
 
-<div class='product'>
+			<div class='product'>
 
-<a href='details.php?pro_id=$pro_id'>
+				<a href='details.php?pro_id=$pro_id'>
 
-<img src='admin_area/product_images/$pro_img1' class='img-responsive'>
+					<img src='admin_area/product_images/$pro_img1' class='img-responsive'>
 
-</a>
+				</a>
 
-<div class='text'>
+				<div class='text'>
 
-<h3><a href='details.php?pro_id=$pro_id'> $pro_title </a></h3>
+					<h3><a href='details.php?pro_id=$pro_id'> $pro_title </a></h3>
 
-<p class='price'>$$pro_price</p>
+					<p class='price'>$$pro_price</p>
 
-<p class='buttons'>
+					<p class='buttons'>
 
-<a href='details.php?pro_id=$pro_id' class='btn btn-default'> View Details </a>
+						<a href='details.php?pro_id=$pro_id' class='btn btn-default'> View Details </a>
 
-<a href='details.php?pro_id=$pro_id' class='btn btn-primary'>
+						<a href='details.php?pro_id=$pro_id' class='btn btn-primary'>
 
-<i class='fa fa-shopping-cart'></i> Add to cart
+							<i class='fa fa-shopping-cart'></i> Add to cart
 
-</a>
+						</a>
 
-</p>
+					</p>
 
-</div>
+				</div>
 
-</div>
+			</div>
 
-</div>
+		</div>
 
-";
+		";
 
-}
+		}
 
 
-}
+	}
 
 }
 
@@ -364,128 +355,118 @@ echo "
 
 function getcatpro(){
 
-global $db;
+	global $db;
 
-if(isset($_GET['cat'])){
+	if(isset($_GET['cat'])){
 
-$cat_id = $_GET['cat'];
+		$cat_id = $_GET['cat'];
 
-$get_cat = "select * from categories where cat_id='$cat_id'";
+		$get_cat = "select * from categories where cat_id='$cat_id'";
 
-$run_cat = mysqli_query($db,$get_cat);
+		$run_cat = mysqli_query($db,$get_cat);
 
-$row_cat = mysqli_fetch_array($run_cat);
+		$row_cat = mysqli_fetch_array($run_cat);
 
-$cat_title = $row_cat['cat_title'];
+		$cat_title = $row_cat['cat_title'];
 
-$cat_desc = $row_cat['cat_desc'];
+		$cat_desc = $row_cat['cat_desc'];
 
-$get_products = "select * from products where cat_id='$cat_id'";
+		$get_products = "select * from products where cat_id='$cat_id'";
 
-$run_products = mysqli_query($db,$get_products);
+		$run_products = mysqli_query($db,$get_products);
 
-$count = mysqli_num_rows($run_products);
+		$count = mysqli_num_rows($run_products);
 
-if($count==0){
+		if($count==0){
 
-echo "
+			echo "
 
-<div class='box' >
+			<div class='box' >
 
-<h1> No Product Found In This Category </h1>
+				<h1> No Product Found In This Category </h1>
 
-</div>
-
-
-";
+			</div>
 
 
-}
-else{
-
-echo "
-
-<div class='box' >
-
-<h1> $cat_title </h1>
-
-<p>$cat_desc</p>
-
-</div>
+			";
 
 
-";
+		}
+		else{
+
+			echo "
+
+			<div class='box' >
+
+				<h1> $cat_title </h1>
+
+				<p>$cat_desc</p>
+
+			</div>
 
 
-}
-
-while($row_products=mysqli_fetch_array($run_products)){
-
-$pro_id = $row_products['product_id'];
-
-$pro_title = $row_products['product_title'];
-
-$pro_price = $row_products['product_price'];
-
-$pro_desc = $row_products['product_desc'];
-
-$pro_img1 = $row_products['product_img1'];
-
-echo "
-
-<div class='col-md-4 col-sm-6 center-responsive' >
-
-<div class='product' >
-
-<a href='details.php?pro_id=$pro_id' >
-
-<img src='admin_area/product_images/$pro_img1' class='img-responsive' >
-
-</a>
-
-<div class='text' >
-
-<h3><a href='details.php?pro_id=$pro_id' >$pro_title</a></h3>
-
-<p class='price' >$$pro_price</p>
-
-<p class='buttons' >
-
-<a href='details.php?pro_id=$pro_id' class='btn btn-default' >View Details</a>
-
-<a href='details.php?pro_id=$pro_id' class='btn btn-primary' >
-
-<i class='fa fa-shopping-cart' ></i> Add To Cart
-
-</a>
+			";
 
 
-</p>
+		}
+
+		while($row_products=mysqli_fetch_array($run_products)){
+
+			$pro_id = $row_products['product_id'];
+
+			$pro_title = $row_products['product_title'];
+
+			$pro_price = $row_products['product_price'];
+
+			$pro_desc = $row_products['product_desc'];
+
+			$pro_img1 = $row_products['product_img1'];
+
+			echo "
+
+			<div class='col-md-4 col-sm-6 center-responsive' >
+
+				<div class='product' >
+
+					<a href='details.php?pro_id=$pro_id' >
+
+						<img src='admin_area/product_images/$pro_img1' class='img-responsive' >
+
+					</a>
+
+					<div class='text' >
+
+						<h3><a href='details.php?pro_id=$pro_id' >$pro_title</a></h3>
+
+						<p class='price' >$$pro_price</p>
+
+						<p class='buttons' >
+
+							<a href='details.php?pro_id=$pro_id' class='btn btn-default' >View Details</a>
+
+							<a href='details.php?pro_id=$pro_id' class='btn btn-primary' >
+
+								<i class='fa fa-shopping-cart' ></i> Add To Cart
+
+							</a>
 
 
-</div>
-
-</div>
-
-</div>
-
-";
+						</p>
 
 
-}
+					</div>
+
+				</div>
+
+			</div>
+
+			";
 
 
+		}
 
-}
-
+	}
 
 }
-
-
-
-
-/// getcatpro function Ends ////
-
-
 
 ?>
