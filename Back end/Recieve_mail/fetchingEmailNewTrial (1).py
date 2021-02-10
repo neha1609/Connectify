@@ -1,3 +1,6 @@
+'''
+This code fetches Email subject, body and sender mail and stores it in Email_data.xlsx file.
+'''
 import imaplib
 import email
 from email.header import decode_header
@@ -9,10 +12,8 @@ from openpyxl import load_workbook
 
 
 # account credentials
-username = "nehajhawar1609@gmail.com"
-password = "gm@!l.c0m"
-filename = "Email.txt"
-
+username = <Your_Gmail_ID>
+password = <Gmail_Password>
 def clean(text):
     # clean text for creating a folder
     return "".join(c if c.isalnum() else "_" for c in text)
@@ -83,16 +84,6 @@ for i in range(messages, messages-N, -1):
                     if content_type == "text/plain" and "attachment" not in content_disposition:
                         # print text/plain emails and skip attachments
                         #print(body)
-                        '''folder_name = clean(subject)
-                        print(folder_name)
-                        file = 'myfile.txt'
-                        fileName = 'C:/xampp/htdocs/EnggPros/' + folder_name+ '_myfile.txt'
-                        file1 = open(fileName,"a") 
-                    
-                        #file1 = open("myfile.txt","a") 
-                        file1.write("Hello \n") 
-                        
-                        #maxr=sheet.max_row'''
                         try:
                             #file1.writelines(body) 
                             body=body.splitlines()
@@ -120,12 +111,6 @@ for i in range(messages, messages-N, -1):
                 if content_type == "text/plain":
                     # print only text email parts
                     #print(body)
-                    '''print(folder_name)
-                    fileName = 'C:/xampp/htdocs/EnggPros/' + folder_name + '_myfile.txt'
-                    file1 = open(fileName,"a") 
-                    file1.write("Hello \n") 
-                    file1.writelines(body) 
-                    file1.close()'''
                     body=body.splitlines()
                     #maxr=sheet.max_row
                     sheet.cell(row=maxr,column=2).value=body[0]
