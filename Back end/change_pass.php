@@ -1,3 +1,4 @@
+<!--Change Password-->
 <?php
 session_start();
   include("includes/dbcon.php");
@@ -142,22 +143,15 @@ session_start();
 
 		$update_pass = "update customers set password='$new_pass' where email='$c_email'";
 
-		/*$run_pass = mysqli_query($con,$update_pass);*/
+		
 
 		if($result=$con->query($update_pass))
 	    {
-	    	/*echo "<script>alert('your Password Has been Changed Successfully')</script>";*/
-	    	/*header("Location:../index.php");*/
+	    	
 	    	echo "<script>window.open('index.php','_self')</script>";
 	        
 	    }
-		/*if($run_pass){
-	      //echo "Welcome ".$row['name'];exit;
-	      	$_SESSION['customers']=$run_pass;
-		    header("Location:../index.php");
-			echo "<script>alert('your Password Has been Changed Successfully')</script>";
-			/*echo "<script>window.open('my_account.php?my_orders','_self')</script>";
-		}*/
+		
 	}
 
 
