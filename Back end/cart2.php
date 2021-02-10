@@ -1,4 +1,4 @@
-
+<!--Cart Portal-->
 <?php
 
 session_start();
@@ -153,36 +153,7 @@ include("functions/functions.php");
                             }
                             }
                                 ?>
-                                <!--<tr>
-                                    <td><img src="https://via.placeholder.com/400x200/87CEFA/000000" class="img-cart"></td>
-                                    <td><strong>Product 2</strong><p>Size : M</p></td>
-                                    <td>
-                                    <form class="form-inline">
-                                        <input class="form-control" type="text" value="2">
-                                        <button class="btn btn-default" ><i class="fa fa-pencil"></i></button>
-                                        <a href="#" class="btn btn-primary" rel="tooltip" ><i class="fa fa-trash-o"></i></a>
-                                    </form>
-                                    </td>
-                                    <td>$16.00</td>
-                                    <td>$32.00</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4" class="text-right">Total Product</td>
-                                    <td>$86.00</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4" class="text-right">Total Shipping</td>
-                                    <td>$2.00</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4" class="text-right"><strong>Total</strong></td>
-                                    <td>$88.00</td>
-                                </tr>-->
-<?php //$a=$_SESSION['customers'];
-//echo $a['customer_id'];?>
+                                
                             </tbody>
                         </table>
                     </div>
@@ -205,7 +176,6 @@ include("functions/functions.php");
                 <?php
                   }
                 ?>
-                  <!--<a href="checkout.php?payment_options" class="btn btn-primary pull-right">Checkout<span class="glyphicon glyphicon-chevron-right"></span></a>-->
             </div>
         </div>
     </div>
