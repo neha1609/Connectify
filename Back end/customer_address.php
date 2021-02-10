@@ -1,3 +1,5 @@
+<!--Adding Customer Address-->
+
 <?php
 session_start();
 	include("includes/dbcon.php");
