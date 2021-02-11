@@ -8,12 +8,12 @@ Our approach to this problem was _to design a software which will be an interfac
 For implementing the above solution, we have done the following:
 1. We made an e-commerce website consisting of admin and customer portals respectively.
 2. In [admin portal](https://github.com/neha1609/Connectify/tree/main/Back%20end/admin), 
-    *Admin can insert, edit, delete and view various customers, delivery agents and vendors.
-    *Admin can contact vendors and delivery agents. This functionality is implemented with the help of PHPMailer.
-    *Also admin can receive orders from gmail automatically just by the click of button **Gmail Order**.
+ Markup : *Admin can insert, edit, delete and view various customers, delivery agents and vendors.
+          *Admin can contact vendors and delivery agents. This functionality is implemented with the help of PHPMailer.
+          *Also admin can receive orders from gmail automatically just by the click of button **Gmail Order**.
 3. In customer portal(_in Back end folder_), 
-    *Customer can view all items in Books, Stationary and Study Material pages
-    *Customer can **add to cart** the requirements and checkout offline or online by their interests.
+Markup : *Customer can view all items in Books, Stationary and Study Material pages
+         *Customer can **add to cart** the requirements and checkout offline or online by their interests.
 
 ## Gmail Order
 
