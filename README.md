@@ -1,11 +1,10 @@
 # Connectify
-This is our Hackathon Project for the SRIIH Hackathon 2021.
-Our Idea for this Hackathon was to __help in regaining education in rural areas in post COVID-19 situation.__
-Our approach to this problem was _to design a software which will be an interface connecting the rural students with some organizations or vendors that can provide them educational requirements at low cost._
+This project was developed during the SRIIH Hackathon 2021. <br/>
+Our Idea was to __help in regaining education in rural areas in post COVID-19 situation.__ <br/>
+Our approach to this problem was _to design a software which will be an interface connecting the rural students with some organizations or vendors that can provide them educational requirements at low cost._ 
 
-## Brief Introduction to files
+## Key Features
 
-For implementing the above solution, we have done the following:
 1. We made an e-commerce website consisting of admin and customer portals respectively.
 2. In [admin portal](https://github.com/neha1609/Connectify/tree/main/Back%20end/admin), <br/>
   * Admin can insert, edit, delete and view various customers, delivery agents and vendors. <br/>
@@ -13,7 +12,7 @@ For implementing the above solution, we have done the following:
   * Also admin can receive orders from gmail automatically just by the click of button **Gmail Order**. <br/>
 3. In customer portal(_in Back end folder_), <br/>
   * Customer can view all items in Books, Stationary and Study Material pages<br/>
-  * Customer can **add to cart** the requirements and checkout offline or online by their interests.<br/>
+  * Customer can **Add to Cart** the requirements and checkout offline or online by their interests.<br/>
 
 ## Gmail Order
 
